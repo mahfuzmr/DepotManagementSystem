@@ -1,0 +1,70 @@
+E:\BITM ADMIN\Trainer\Mahfuz.Training\Git\DEPOTManagementAndPOS\DEPOTManagementAndPOS\DEPOTManagementAndPOS\bin\Debug\DEPOTManagementAndPOS.exe.config
+E:\BITM ADMIN\Trainer\Mahfuz.Training\Git\DEPOTManagementAndPOS\DEPOTManagementAndPOS\DEPOTManagementAndPOS\bin\Debug\DEPOTManagementAndPOS.exe
+E:\BITM ADMIN\Trainer\Mahfuz.Training\Git\DEPOTManagementAndPOS\DEPOTManagementAndPOS\DEPOTManagementAndPOS\bin\Debug\DEPOTManagementAndPOS.pdb
+E:\BITM ADMIN\Trainer\Mahfuz.Training\Git\DEPOTManagementAndPOS\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.Properties.Resources.resources
+E:\BITM ADMIN\Trainer\Mahfuz.Training\Git\DEPOTManagementAndPOS\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.UI.AlterproductInformationUi.resources
+E:\BITM ADMIN\Trainer\Mahfuz.Training\Git\DEPOTManagementAndPOS\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.UI.DepotInfoUI.resources
+E:\BITM ADMIN\Trainer\Mahfuz.Training\Git\DEPOTManagementAndPOS\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.UI.ProductEntryUI.resources
+E:\BITM ADMIN\Trainer\Mahfuz.Training\Git\DEPOTManagementAndPOS\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.UI.SellProductUi.resources
+E:\BITM ADMIN\Trainer\Mahfuz.Training\Git\DEPOTManagementAndPOS\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.UI.ViewProductInfoUI.resources
+E:\BITM ADMIN\Trainer\Mahfuz.Training\Git\DEPOTManagementAndPOS\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.csproj.GenerateResource.Cache
+E:\BITM ADMIN\Trainer\Mahfuz.Training\Git\DEPOTManagementAndPOS\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.exe
+E:\BITM ADMIN\Trainer\Mahfuz.Training\Git\DEPOTManagementAndPOS\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.pdb
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\bin\Debug\DEPOTManagementAndPOS.exe.config
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\bin\Debug\DEPOTManagementAndPOS.exe
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\bin\Debug\DEPOTManagementAndPOS.pdb
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.Properties.Resources.resources
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.UI.AlterproductInformationUi.resources
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.UI.CategoryUi.resources
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.UI.CreateNewBrand.resources
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.UI.DepotInfoUI.resources
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.UI.ProductEntryUi.resources
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.UI.PurchaseEntryUi.resources
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.UI.SellProductUi.resources
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.UI.ViewProductInfoUI.resources
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.csproj.GenerateResource.Cache
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.exe
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.pdb
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\bin\Debug\DEPOTManagementAndPOS.exe.config
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\bin\Debug\DEPOTManagementAndPOS.exe
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\bin\Debug\DEPOTManagementAndPOS.pdb
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\bin\Debug\itextsharp.dll
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\bin\Debug\itextsharp.pdfa.dll
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\bin\Debug\itextsharp.xtra.dll
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\bin\Debug\itextsharp.xml
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.Properties.Resources.resources
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.UI.AlterproductInformationUi.resources
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.UI.CategoryEntryUi.resources
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.UI.BrandEntryUi.resources
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.UI.DailySellReportUi.resources
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.UI.DepotInfoUI.resources
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.UI.ProductEntryUi.resources
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.UI.PurchaseEntryUi.resources
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.UI.SellProductUi.resources
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.UI.SellReturnUi.resources
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.UI.ViewProductInfoUI.resources
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.csproj.GenerateResource.Cache
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.exe
+H:\002 - Tutorials\[ Inventory ]\SuperShop\DEPOTManagementAndPOS\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS-WuthCompleteUI\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.pdb
+H:\Projects\DEPOTManagementAndPOS\DEPOTManagementAndPOS\bin\Debug\DEPOTManagementAndPOS.exe.config
+H:\Projects\DEPOTManagementAndPOS\DEPOTManagementAndPOS\bin\Debug\DEPOTManagementAndPOS.exe
+H:\Projects\DEPOTManagementAndPOS\DEPOTManagementAndPOS\bin\Debug\DEPOTManagementAndPOS.pdb
+H:\Projects\DEPOTManagementAndPOS\DEPOTManagementAndPOS\bin\Debug\itextsharp.dll
+H:\Projects\DEPOTManagementAndPOS\DEPOTManagementAndPOS\bin\Debug\itextsharp.pdfa.dll
+H:\Projects\DEPOTManagementAndPOS\DEPOTManagementAndPOS\bin\Debug\itextsharp.xtra.dll
+H:\Projects\DEPOTManagementAndPOS\DEPOTManagementAndPOS\bin\Debug\itextsharp.xml
+H:\Projects\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.csprojResolveAssemblyReference.cache
+H:\Projects\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.Properties.Resources.resources
+H:\Projects\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.UI.AlterproductInformationUi.resources
+H:\Projects\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.UI.CategoryEntryUi.resources
+H:\Projects\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.UI.BrandEntryUi.resources
+H:\Projects\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.UI.DailySellReportUi.resources
+H:\Projects\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.UI.DepotInfoUI.resources
+H:\Projects\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.UI.ProductEntryUi.resources
+H:\Projects\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.UI.PurchaseEntryUi.resources
+H:\Projects\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.UI.SellProductUi.resources
+H:\Projects\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.UI.SellReturnUi.resources
+H:\Projects\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.UI.ViewProductInfoUI.resources
+H:\Projects\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.csproj.GenerateResource.Cache
+H:\Projects\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.exe
+H:\Projects\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.pdb
