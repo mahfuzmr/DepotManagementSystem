@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DEPOTManagementAndPOS.Model;
+using iTextSharp.text;
 
 namespace DEPOTManagementAndPOS.DLL
 {
@@ -122,6 +123,36 @@ namespace DEPOTManagementAndPOS.DLL
             }
             _connection.Close();
             return currentQuantity;
+        }
+
+        public List<Stock> GetTotalStockInfo()
+        {
+            _connection.Open();
+            Stock aStock;
+            List<Stock>aStockList=new List<Stock>();
+            
+            string query = string.Format("SELECT  ProductName,QuantityInStock FROM StockTable");
+            _command = new SqlCommand(query, _connection);
+            SqlDataReader aReader = _command.ExecuteReader();
+
+            if (aReader.HasRows)
+            {
+                while (aReader.Read())
+                {
+                    aStock=new Stock();
+                    aStock.QuantityInStock = Convert.ToInt32(aReader[1]);
+                    aStock.ProductName = aReader[0].ToString();
+                    aStockList.Add(aStock);
+
+
+
+
+
+
+                }
+            }
+            _connection.Close();
+            return aStockList;
         }
     }
 }

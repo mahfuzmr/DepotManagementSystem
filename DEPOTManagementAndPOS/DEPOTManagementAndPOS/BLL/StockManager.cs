@@ -43,5 +43,11 @@ namespace DEPOTManagementAndPOS.BLL
             return _aStockGateway.SellReturnStockUpdate(aProduct, newQuantityInStock);
 
         }
+
+        public List<Stock> GetTotalStockInfo()
+        {
+            _aStockGateway = new StockGateway();
+            return _aStockGateway.GetTotalStockInfo();
+        }
     }
 }

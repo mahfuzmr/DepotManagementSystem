@@ -22,6 +22,7 @@ namespace DEPOTManagementAndPOS
             //Application.Run(new ProductEntryUi());
             //Application.Run(new PurchaseEntryUi());
             Application.Run(new SellProductUi());
+           // Application.Run(new PurchaseInfoUi());
         }
     }
 }

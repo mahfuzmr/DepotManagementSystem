@@ -512,6 +512,14 @@ namespace DEPOTManagementAndPOS.UI
 
         }
 
+        private void purchaseInfoButton_Click(object sender, EventArgs e)
+        {
+            PurchaseInfoUi aPurchaseInfoUi=new PurchaseInfoUi();
+            aPurchaseInfoUi.ShowDialog();
+        }
+
+       
+
 
 
    

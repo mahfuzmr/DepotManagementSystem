@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DEPOTManagementAndPOS.DLL;
 
 namespace DEPOTManagementAndPOS.Model
 {
@@ -29,5 +30,7 @@ namespace DEPOTManagementAndPOS.Model
         {
             return Quantity*Price;
         }
+
+       
     }
 }
