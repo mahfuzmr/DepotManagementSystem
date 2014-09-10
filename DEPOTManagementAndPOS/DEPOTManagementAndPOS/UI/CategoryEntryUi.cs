@@ -28,15 +28,23 @@ namespace DEPOTManagementAndPOS.UI
 
             bool saveCategory = false;
 
-            saveCategory = _aCategoryEntryManager.SaveCategory(_aCategoryEntry);
-            if (saveCategory)
+            if (!string.IsNullOrEmpty(_aCategoryEntry.Name))
             {
-                MessageBox.Show("Category saved succesfully");
+                saveCategory = _aCategoryEntryManager.SaveCategory(_aCategoryEntry);
+                if (saveCategory)
+                {
+                    MessageBox.Show("Category saved succesfully");
+                }
+                else
+                {
+                    MessageBox.Show("Error saving new category");
+                }    
             }
             else
             {
-                MessageBox.Show("Error saving new category");
+                MessageBox.Show("Please enter a name for the Category");
             }
+            
 
 
         }

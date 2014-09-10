@@ -112,38 +112,5 @@ namespace DEPOTManagementAndPOS.DLL
            
 
         }
-
-        public List<Purchase> GetPurchaseInfo()
-        {
-            _connection.Open();
-            
-            List<Purchase>aPurchasesList=new List<Purchase>();
-            string query = string.Format("SELECT ProductName, Quantity,Price, DateTime FROM PurchaseTable ORDER BY DateTime DESC");
-            _command = new SqlCommand(query, _connection);
-            SqlDataReader aReader = _command.ExecuteReader();
-
-            if (aReader.HasRows)
-            {
-
-                while (aReader.Read())
-                {
-                    _aPurchase = new Purchase();
-
-                   
-                    
-                    _aPurchase.ProductName = aReader[0].ToString();
-                    _aPurchase.Quantity = Convert.ToInt32(aReader[1]);
-                    _aPurchase.Price = Convert.ToDouble(aReader[2]);
-                    _aPurchase.DateTime = aReader[3].ToString();
-                   
-
-                    aPurchasesList.Add(_aPurchase);
-
-
-                }
-            }
-            _connection.Close();
-            return aPurchasesList;
-        }
     }
 }

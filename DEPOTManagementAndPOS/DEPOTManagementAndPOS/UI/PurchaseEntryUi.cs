@@ -42,7 +42,7 @@ namespace DEPOTManagementAndPOS.UI
 
 
 
-        private double totalPricePrevious;
+       
         private void closePurchaseEntryUiButton_Click(object sender, EventArgs e)
         {
             this.Close();

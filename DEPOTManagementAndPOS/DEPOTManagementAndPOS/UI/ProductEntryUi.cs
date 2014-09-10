@@ -39,15 +39,23 @@ namespace DEPOTManagementAndPOS.UI
             _aProduct.CategoryEntry = selectedCategory;
             _aProduct.BrandEntry = selectedBrand;
 
-            saveNewProduct = _aProductEntryManager.SaveProductNameExtention(_aProduct);
-            if (saveNewProduct)
+            if (!string.IsNullOrEmpty(_aProduct.ProductNameExtention))
             {
-                MessageBox.Show("Product name extention saved successful");
+                saveNewProduct = _aProductEntryManager.SaveProductNameExtention(_aProduct);
+                if (saveNewProduct)
+                {
+                    MessageBox.Show("Product name extention saved successful");
+                }
+                else
+                {
+                    MessageBox.Show("Error saving product name extention");
+                }    
             }
             else
             {
-                MessageBox.Show("Error saving product name extention");
+                MessageBox.Show("Please enter a product specication/extention");
             }
+            
 
         }
 
@@ -101,6 +109,12 @@ namespace DEPOTManagementAndPOS.UI
         private void closeProductEntryButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void refreshAllButton_Click(object sender, EventArgs e)
+        {
+            CategoryEntryManager _aCategoryEntryManager = new CategoryEntryManager();
+            categoryComboBox.DataSource = _aCategoryEntryManager.GetAllCategory();
         }
 
        

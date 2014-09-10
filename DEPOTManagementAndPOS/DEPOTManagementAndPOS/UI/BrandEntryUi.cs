@@ -35,19 +35,28 @@ namespace DEPOTManagementAndPOS.UI
 
             NewBrandEntryManager aNewBrandEntryManager = new NewBrandEntryManager();
             bool saveNewBrandEntry = false;
-            saveNewBrandEntry = aNewBrandEntryManager.SaveNewBrand(aBrandEntry);
-            
-            if (selectedCategory!= null)
+
+            if (!string.IsNullOrEmpty(aBrandEntry.Name))
             {
-                if (saveNewBrandEntry)
+                saveNewBrandEntry = aNewBrandEntryManager.SaveNewBrand(aBrandEntry);
+
+                if (selectedCategory != null)
                 {
-                    MessageBox.Show("New Brand saved successfully");
-                }
-                else
-                {
-                    MessageBox.Show("Error saving new brand");
+                    if (saveNewBrandEntry)
+                    {
+                        MessageBox.Show("New Brand saved successfully");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error saving new brand");
+                    }
                 }    
             }
+            else
+            {
+                MessageBox.Show("Please enter a brand name");
+            }
+            
             
             
         }
@@ -67,6 +76,12 @@ namespace DEPOTManagementAndPOS.UI
         private void closeNewBrandButton_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void refreshbutton_Click(object sender, EventArgs e)
+        {
+            CategoryEntryManager _aCategoryEntryManager = new CategoryEntryManager();
+            categoryComboBox.DataSource = _aCategoryEntryManager.GetAllCategory();
         }
 
         

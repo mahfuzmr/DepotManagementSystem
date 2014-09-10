@@ -44,10 +44,37 @@ namespace DEPOTManagementAndPOS.BLL
 
         }
 
-        public List<Stock> GetTotalStockInfo()
+        public bool UpdateAllStockInfoUsingList(Stock aStock)
         {
             _aStockGateway = new StockGateway();
-            return _aStockGateway.GetTotalStockInfo();
+            return _aStockGateway.UpdateAllStockInfoUsingList(aStock);
+        }
+
+        public bool UpdateStockWhenDeletingIteM(SellProduct itemToDelete)
+        {
+            _aStockGateway= new StockGateway();
+            long currentQuantity = _aStockGateway.GetCurrentQuantityOfaProduct(itemToDelete.ItemName);
+
+            long newQuantityOfStockAfterAddingDeletedItem = currentQuantity + itemToDelete.Quantity;
+
+            return _aStockGateway.SellReturnStockUpdate(itemToDelete,newQuantityOfStockAfterAddingDeletedItem);
+
+
+
+        }
+
+        public List<Stock> ViewAllDepo()
+        {
+            StockGateway _aStockGateway = new StockGateway();
+
+            return _aStockGateway.ViewAllDepo();
+        }
+
+        public bool DeleleStock(Stock aStock)
+        {
+            StockGateway _aStockGateway = new StockGateway();
+
+           return  _aStockGateway.DeleleStock(aStock);
         }
     }
 }

@@ -36,5 +36,17 @@ namespace DEPOTManagementAndPOS.BLL
             _aSellProductGateway =new SellProductGateway();
             return _aSellProductGateway.DeleteSelectRow(selectedItemToDelete, id);
         }
+
+        public bool DeleteSelectedItemUsingItemName(string itemNameToBeDelete, long sellInvoiceId)
+        {
+            _aSellProductGateway = new SellProductGateway();
+            return _aSellProductGateway.DeleteSelectedItemUsingItemName(itemNameToBeDelete, sellInvoiceId);
+        }
+
+        public bool UpdateAllSellProductUsingOrderNo(SellProduct aSellProduct, Int64 invoiceIdOfCurrentOrderNo)
+        {
+            _aSellProductGateway = new SellProductGateway();
+            return _aSellProductGateway.UpdateAllSellProductUsingOrderNo(aSellProduct, invoiceIdOfCurrentOrderNo);
+        }
     }
 }

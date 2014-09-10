@@ -94,36 +94,31 @@ namespace DEPOTManagementAndPOS.DLL
             return false;
         }
         int matchedSellInvoiceIdwithSellOrderNo;
-        public bool UpdateAllSellProductUsingOrderNo(SellProduct aSellProduct, string id)
+
+
+        public bool UpdateAllSellProductUsingOrderNo(SellProduct aSellProduct, long invoiceIdOfCurrentOrderNo)
         {
-            _connection.Open();
-            string queryMatchingSellInvoiceId =
-                string.Format(
-                    "SELECT SellInvoiceId " +
-                    "FROM SellInvoiceTable " +
+            //_connection.Open();
+            //string queryMatchingSellInvoiceId =
+            //    string.Format(
+            //        "SELECT SellInvoiceId " +
+            //        "FROM SellInvoiceTable " +
+            //        "WHERE SellInvoiceTable.SellOrderNo ='{0}'", orderNo);
+            //_command = new SqlCommand(queryMatchingSellInvoiceId, _connection);
+            //SqlDataReader aReader = _command.ExecuteReader();
+
+            //if (aReader.HasRows)
+            //{
+            //    while (aReader.Read())
+            //    {
+            //        //int matchedSellInvoiceIdwithSellOrderNo;
+            //       matchedSellInvoiceIdwithSellOrderNo = Convert.ToInt32(aReader[0]);
                     
-                    "WHERE SellInvoiceTable.SellOrderNo ='{0}'", id);
-            _command = new SqlCommand(queryMatchingSellInvoiceId, _connection);
-            SqlDataReader aReader = _command.ExecuteReader();
-
-            if (aReader.HasRows)
-            {
-                while (aReader.Read())
-                {
-                    //int matchedSellInvoiceIdwithSellOrderNo;
-                   matchedSellInvoiceIdwithSellOrderNo = Convert.ToInt32(aReader[0]);
-                    
 
                     
-                }
-            }
-            _connection.Close();
-
-
-
-
-
-
+            //    }
+            //}
+            //_connection.Close();
 
             // END of Parsing SellInvoiceID from SellInvoiceTable using SellOrderNo
             _connection.Open();
@@ -132,7 +127,7 @@ namespace DEPOTManagementAndPOS.DLL
                 string.Format(
                     "UPDATE SellProductTable SET TotalPrice={0},quantity={1},UnitPrice={2} " +
                     "WHERE (SellInvoiceId={3}) AND (ItemName='{4}');",
-                    aSellProduct.TotalPrice, aSellProduct.Quantity, aSellProduct.UnitPrice, matchedSellInvoiceIdwithSellOrderNo, aSellProduct.ItemName);
+                    aSellProduct.TotalPrice, aSellProduct.Quantity, aSellProduct.UnitPrice, invoiceIdOfCurrentOrderNo, aSellProduct.ItemName);
 
 
 
@@ -148,12 +143,37 @@ namespace DEPOTManagementAndPOS.DLL
 
         public bool DeleteSelectRow(string selectedItemToDelete, string id)
         {
+
+
+            //_connection.Open();
+            //string queryMatchingSellInvoiceId =
+            //    string.Format(
+            //        "SELECT SellInvoiceId " +
+            //        "FROM SellInvoiceTable " +
+            //        "WHERE SellInvoiceTable.SellOrderNo ='{0}'", id);
+            //_command = new SqlCommand(queryMatchingSellInvoiceId, _connection);
+            //SqlDataReader aReader = _command.ExecuteReader();
+
+            //if (aReader.HasRows)
+            //{
+            //    while (aReader.Read())
+            //    {
+            //        int matchedSellInvoiceIdwithSellOrderNo;
+            //        matchedSellInvoiceIdwithSellOrderNo = Convert.ToInt32(aReader[0]);
+
+
+
+            //    }
+            //}
+            //_connection.Close();
+
+
             _connection.Open();
 
             string query =
                 string.Format("DELETE FROM SellProductTable " +
                               "WHERE (SellProductTable.ItemName= '{0}') " +
-                              "AND(SellProductTable.SellInvoiceId = '{1}')", selectedItemToDelete, id);
+                              "AND(SellProductTable.SellInvoiceId = '{1}')", selectedItemToDelete, matchedSellInvoiceIdwithSellOrderNo);
 
 
             _command = new SqlCommand(query, _connection);
@@ -164,6 +184,53 @@ namespace DEPOTManagementAndPOS.DLL
                 return true;
             }
             return false;
+        }
+
+        public bool DeleteSelectedItemUsingItemName(string itemNameToBeDelete, long sellInvoiceId)
+        {
+            _connection.Open();
+
+            string query =
+                string.Format("DELETE FROM SellProductTable " +
+                              "WHERE (SellProductTable.ItemName= '{0}') " +
+                              "AND (SellProductTable.SellInvoiceId ='{1}' )", itemNameToBeDelete, sellInvoiceId);
+
+
+            _command = new SqlCommand(query, _connection);
+            int affectedRows = _command.ExecuteNonQuery();
+            _connection.Close();
+            if (affectedRows > 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public long GetSellInvoiceIdUsingOrderNo(Int64 orderNo)
+        {
+            _connection.Open();
+            string queryMatchingSellInvoiceId =
+                string.Format(
+                    "SELECT SellInvoiceId " +
+                    "FROM SellInvoiceTable " +
+                    "WHERE SellInvoiceTable.SellOrderNo ='{0}'", orderNo);
+            _command = new SqlCommand(queryMatchingSellInvoiceId, _connection);
+            SqlDataReader aReader = _command.ExecuteReader();
+            Int64 sellInvoiceId =0;
+            if (aReader.HasRows)
+            {
+                while (aReader.Read())
+                {
+                    sellInvoiceId = Convert.ToInt64(aReader[0]);
+
+
+
+                }
+                
+            }
+            _connection.Close();
+            return sellInvoiceId;
+
         }
     }
 }

@@ -20,24 +20,28 @@ namespace DEPOTManagementAndPOS.UI
             InitializeComponent();
             AddButtonColumnEdit();
             AddButtonColumnDelete();
+            addToUpdateSellReturnButton.Enabled = false;
         }
         double totalPrice = 0;
-        private string id;
-
-
+        private string OrderNo;
         private List<SellProduct> _aSellProductsForMatching;
+        private List<SellProduct> productsToBeDeleted;
 
+
+        
+        List<SellProduct> _aSellProductList = new List<SellProduct>(); //old quantity found
         private void searchByOrderNoButton_Click(object sender, EventArgs e)
         {
+            productsToBeDeleted = new List<SellProduct>();
             payableTotalTextBox.Text = 0.ToString();
             sellReturnDataGridView.Rows.Clear();
-            id = searchOrderNoTextBox.Text;
+            OrderNo = searchOrderNoTextBox.Text;
 
             totalPrice = 0;
             totaItemTakenCounter = 0;
             CustomerManager aCustomerManager = new CustomerManager();
 
-            Customer aCustomer = aCustomerManager.GetCustomerInfoUsingId(id);
+            Customer aCustomer = aCustomerManager.GetCustomerInfoUsingId(OrderNo);
 
             customerNameTextBox.Text = aCustomer.Name;
 
@@ -46,27 +50,24 @@ namespace DEPOTManagementAndPOS.UI
 
 
             SellProductManeger aSellProductManeger = new SellProductManeger();
-            List<SellProduct> _aSellProducts = aSellProductManeger.GetSoldProductInfoUsingOrderNo(id);
+            _aSellProductList = aSellProductManeger.GetSoldProductInfoUsingOrderNo(OrderNo);
 
-            int searchTrack = _aSellProducts.Count;
+            int searchTrack = _aSellProductList.Count;
 
             if (searchTrack == 0)
             {
                 MessageBox.Show("No Item Found");
-                doneButton.Enabled = false;
-                addToUpdateSellReturnButton.Enabled = false;
 
             }
-            else
-            {
-                doneButton.Enabled = true;
-            addToUpdateSellReturnButton.Enabled = true;
-        }
 
-        _aSellProductsForMatching = new List<SellProduct>();
-            _aSellProductsForMatching = _aSellProducts;
+            doneButton.Enabled = false;
+            addToUpdateSellReturnButton.Enabled = false;
 
-            foreach (var aSellProduct in _aSellProducts)
+        
+              _aSellProductsForMatching = new List<SellProduct>();
+            _aSellProductsForMatching = _aSellProductList;
+
+            foreach (var aSellProduct in _aSellProductList)
             {
                 sellReturnDataGridView.Rows.Add(aSellProduct.ItemName, aSellProduct.Quantity, aSellProduct.UnitPrice,
                     aSellProduct.TotalPrice);
@@ -79,7 +80,7 @@ namespace DEPOTManagementAndPOS.UI
 
             SellInvoice _aSellInvoice = new SellInvoice();
             SellInvoiceManager _aSellInvoiceManager = new SellInvoiceManager();
-            _aSellInvoice = _aSellInvoiceManager.GetSellReportUsingOrderNo(id);
+            _aSellInvoice = _aSellInvoiceManager.GetSellReportUsingOrderNo(OrderNo);
             paidTextBox.Text = _aSellInvoice.Paid.ToString();
             dueTextBox.Text = _aSellInvoice.Due.ToString();
 
@@ -126,6 +127,7 @@ namespace DEPOTManagementAndPOS.UI
 
         private double dueAdjustedFromDeleteButton = 0;
         List<String> itemToBeDeleteList = new List<string>();
+        private List<Stock> _aStockList = new List<Stock>(); 
         private void sellReturnDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 4) //Assuming the button column as second column, if not can change the index
@@ -152,43 +154,114 @@ namespace DEPOTManagementAndPOS.UI
                 grandTotalTextBox.Text = totalPrice.ToString();
                 dueAdjustedTextBox.Text = (totalPrice - (Convert.ToDouble(paidTextBox.Text))).ToString();
                 totalItemTakenLabel.Text = totaItemTakenCounter.ToString();
-                
+
+                addToUpdateSellReturnButton.Enabled = true;
+                doneButton.Enabled = true;
 
             }
 
             if (e.ColumnIndex == 5)
             {
+
+                SellProduct aSellProductToDelete = new SellProduct();
                 int selectedRow = e.RowIndex;
-                string itemToBeDelete = sellReturnDataGridView.Rows[selectedRow].Cells[0].Value.ToString();
-                //(string) sellReturnDataGridView.Rows[selectedRow].Cells[1].Value;
+                aSellProductToDelete.ItemName = sellReturnDataGridView.Rows[selectedRow].Cells[0].Value.ToString();
+                aSellProductToDelete.Quantity = (int) sellReturnDataGridView.Rows[selectedRow].Cells[1].Value;
+             
+                
+                string itemNameToBeDelete = sellReturnDataGridView.Rows[selectedRow].Cells[0].Value.ToString();
+                double aProductTotalPrice = (double) sellReturnDataGridView.Rows[selectedRow].Cells[3].Value;
 
+                int quantityToBeDeletedItem = (int) sellReturnDataGridView.Rows[selectedRow].Cells[1].Value;
+
+
+                SellProductManeger aSellProductManager = new SellProductManeger();
+                SellInvoiceManager aSellInvoiceManager = new SellInvoiceManager();
 
                 
-                itemToBeDeleteList.Add(itemToBeDelete);
-                double aProductTotalPrice = Convert.ToDouble(sellReturnDataGridView.CurrentRow.Cells[3].Value);
-                sellReturnDataGridView.Rows.Remove(sellReturnDataGridView.Rows[e.RowIndex]);
-                totalPrice = totalPrice - aProductTotalPrice;
-                grandTotalTextBox.Text = totalPrice.ToString();
-                totaItemTakenCounter--;
-                totalItemTakenLabel.Text = totaItemTakenCounter.ToString();
-                dueAdjustedTextBox.Text = (totalPrice - (Convert.ToDouble(paidTextBox.Text))).ToString();
-                dueAdjustedFromDeleteButton = totalPrice - (Convert.ToDouble(paidTextBox.Text));
-                payableTotalTextBox.Clear();
 
+
+
+
+                var confirmResult = MessageBox.Show("Are you sure to delete this item ??",
+                        "Confirm Delete!!",
+                        MessageBoxButtons.YesNo);
+
+               
+
+                if (confirmResult == DialogResult.Yes)
+                {
+                    productsToBeDeleted.Add(aSellProductToDelete);
+                    sellReturnDataGridView.Rows.Remove(sellReturnDataGridView.Rows[e.RowIndex]);
+
+                  //  double aProductTotalPrice = Convert.ToDouble(sellReturnDataGridView.CurrentRow.Cells[3].Value);
+
+                    totaItemTakenCounter--;
+                    totalPrice = _aSellProduct.GetGrandTotalMinus(totalPrice, aProductTotalPrice);
+                    grandTotalTextBox.Text = totalPrice.ToString();
+                    dueAdjustedTextBox.Text = (totalPrice - (Convert.ToDouble(paidTextBox.Text))).ToString();
+                    totalItemTakenLabel.Text = totaItemTakenCounter.ToString();
+
+                    addToUpdateSellReturnButton.Enabled = true;
+                    doneButton.Enabled = true;
+
+                      
+                }
+                else
+                {
+                    MessageBox.Show("Item not deleted");
+                }
+               
+                //Adhustimg paid,due and total from sellInvoiceTable
+
+               // SellInvoiceManager _aSellInvoiceManager= new SellInvoiceManager();
+               // _aSellInvoiceManager.UpdateSellInvoiceAmpuntWhileDeleting();
+
+
+                 
+
+                Stock _aStock = new Stock();
+                StockManager _aStockManager = new StockManager();
+
+                _aStock = _aStockManager.GetCurrentStockInfo(itemNameToBeDelete);
+                string productNameFromDatabase = _aStock.ProductName;
                 
-                SellProduct _aSellProduct = new SellProduct();
 
+                if (productNameFromDatabase == itemNameToBeDelete)
+                {
+                    int quantityPrevious = _aStock.QuantityInStock;
+                    int quantityNew = quantityToBeDeletedItem;
+                    int quantityInStockAfterSellReturn = quantityPrevious + quantityNew;
+                    _aStock.QuantityInStock = quantityInStockAfterSellReturn;
 
+                    _aStockList.Add(_aStock);
+                    
+                }
+               
+                //itemToBeDeleteList.Add(itemNameToBeDelete);
+                //double aProductTotalPrice = Convert.ToDouble(sellReturnDataGridView.CurrentRow.Cells[3].Value);
+                
+                //totalPrice = totalPrice - aProductTotalPrice;
+                //grandTotalTextBox.Text = totalPrice.ToString();
+                //totaItemTakenCounter--;
+                //totalItemTakenLabel.Text = totaItemTakenCounter.ToString();
+                //dueAdjustedTextBox.Text = (totalPrice - (Convert.ToDouble(paidTextBox.Text))).ToString();
+                //dueAdjustedFromDeleteButton = totalPrice - (Convert.ToDouble(paidTextBox.Text));
+                //payableTotalTextBox.Text=0.ToString();
 
-
+                //doneButton.Enabled = true;
 
             }
         }
+
         int totaItemTakenCounter = 0;
        
         SellProduct _aSellProduct = new SellProduct();
+        List<Stock> _aStockListFromGridViewAfterEditingProduct = new List<Stock>();
+
         private double paymentIsPlusOrMinus;
         private double dueAdjustedFromAddButton ;
+
         private void addToUpdateSellReturnButton_Click(object sender, EventArgs e)
         {
             customerInfoGroupBox.Enabled = true;
@@ -213,6 +286,29 @@ namespace DEPOTManagementAndPOS.UI
             double totalPricePerProduct = _aSellProduct.GetTotalPrice(quantity, unitPrice);
 
             sellReturnDataGridView.Rows.Add(itemName, quantity, unitPrice, totalPricePerProduct);
+
+            
+              
+            
+
+
+            for (int i = 0; i < sellReturnDataGridView.Rows.Count - 1; i++)
+            {
+                for (int j = 0; j < 1; j++)
+                {
+                    Stock aStock = new Stock();
+
+                    string productName = Convert.ToString(sellReturnDataGridView.Rows[i].Cells[j].Value);
+                    Int32 quantityUpdatedFromGridView = Convert.ToInt32(sellReturnDataGridView.Rows[i].Cells[j + 1].Value);
+
+                    aStock.ProductName = productName;
+                    aStock.QuantityInStock = quantityUpdatedFromGridView;
+
+                    _aStockListFromGridViewAfterEditingProduct.Add(aStock); // new quantity found
+
+                }
+            }
+
             totalPrice += totalPricePerProduct;
 
             itemNameForSellReturnTextBox.Clear();
@@ -223,21 +319,15 @@ namespace DEPOTManagementAndPOS.UI
             totalItemTakenLabel.Text = totaItemTakenCounter.ToString();
             double paidPrevious = Convert.ToDouble(paidTextBox.Text);
 
-            // grandTotal view
             grandTotalTextBox.Text = totalPrice.ToString();
             paymentIsPlusOrMinus = totalPrice - paidPrevious;
-            //if (paymentIsPlusOrMinus < 0)
-            //{
-            //    statusLabel.ForeColor=Color.Red;
-            //    statusLabel.Text = "Payable to Customer";
-            //    dueStatusLabel.ForeColor = Color.Red;
-            //    dueStatusLabel.Text="Payable To Customer";
-            //    payableTotalTextBox.ReadOnly = true;
-            //}
+
 
 
             dueAdjustedTextBox.Text = paymentIsPlusOrMinus.ToString();
             dueAdjustedFromAddButton = paymentIsPlusOrMinus;
+
+            addToUpdateSellReturnButton.Enabled = false;
 
         }
 
@@ -350,16 +440,21 @@ namespace DEPOTManagementAndPOS.UI
             status = aSellInvoiceManager.UpdateAllSellVoiceUsingOrderNo(aSellInvoice);
             if (status)
             {
-                MessageBox.Show("Successfully updated sell return info");
+                MessageBox.Show("Successfully updated sell return info in SellInvoiceTable");
             }
             else
             {
-                MessageBox.Show("Error updating sell return info");
+                MessageBox.Show("Error updating sell return info in SellInvoiceTable");
             }
 
 
+            //Sell ProductTable during edit save
+
             SellInvoiceManager _aInvoiceManager = new SellInvoiceManager();
-            int statusFlag = 0;
+            Int64 invoiceIdOfCurrentOrderNo = _aInvoiceManager.GetSellInvoiceIdUsingOrderNo(orderNo);
+
+            SellProductManeger _aSellProductManeger = new SellProductManeger();
+            
 
             for (int i = 0; i < sellReturnDataGridView.Rows.Count - 1; i++)
             {
@@ -374,11 +469,17 @@ namespace DEPOTManagementAndPOS.UI
                     aSellProduct.TotalPrice = Convert.ToDouble(sellReturnDataGridView.Rows[i].Cells[j + 3].Value);
                     aSellProduct.ItemName = (string) sellReturnDataGridView.Rows[i].Cells[j].Value;
 
-
-                    status2 = _aInvoiceManager.UpdateAllSellProductUsingOrderNo(aSellProduct, id);
+                    status2 = _aSellProductManeger.UpdateAllSellProductUsingOrderNo(aSellProduct,
+                        invoiceIdOfCurrentOrderNo);
+                    // _aInvoiceManager.UpdateAllSellProductUsingOrderNo(aSellProduct,OrderNo);
                     if (status2)
                     {
-                        statusFlag++;
+                        MessageBox.Show("SellProductTable Updated succeessfully");
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error in Updating SellProductTable");
                     }
 
 
@@ -390,14 +491,15 @@ namespace DEPOTManagementAndPOS.UI
                         {
                             int statusStockcount = 1;
                             if (aProduct.Quantity != aSellProduct.Quantity)
-                            {StockManager _stockManager = new StockManager();
+                            {
+                                StockManager _stockManager = new StockManager();
                                 bool statusStock = false;
 
-                              statusStock =   _stockManager.SellReturnStockUpdate(aProduct, aSellProduct);
+                                statusStock = _stockManager.SellReturnStockUpdate(aProduct, aSellProduct);
 
                                 if (statusStock)
                                 {
-                                    MessageBox.Show(statusStockcount+"Sell Return Stock Updated");
+                                    MessageBox.Show(statusStockcount + "Sell Return Stock Updated");
                                     statusStockcount++;
                                 }
                                 else
@@ -415,35 +517,113 @@ namespace DEPOTManagementAndPOS.UI
             }
 
 
-            if (statusFlag == sellReturnDataGridView.Rows.Count - 1)
+            //Deleting item
+            if(productsToBeDeleted !=null){
+            foreach (SellProduct itemToDelete in productsToBeDeleted)
+            {
+
+                SellProductManeger aSellProductManager = new SellProductManeger();
+                StockManager aStockManager = new StockManager();
+                Int64 sellInvoiceId = aSellInvoiceManager.GetSellInvoiceIdUsingOrderNo(Convert.ToInt64(OrderNo));
+
+
+                bool deleteItemFromSellProductTableSuccess =
+                    aSellProductManager.DeleteSelectedItemUsingItemName(itemToDelete.ItemName, sellInvoiceId);
+                bool updateStockDeletedItem = aStockManager.UpdateStockWhenDeletingIteM(itemToDelete);
+
+
+                if (updateStockDeletedItem)
                 {
-                    MessageBox.Show("Item Update successfuly");
+                    MessageBox.Show("deleted Item Added To Stock Successfully");
+
                 }
                 else
                 {
-                    MessageBox.Show("Error updating sell return");
+                    MessageBox.Show("Error to Adding deleted Item Added To Stock");
                 }
 
 
-
-                SellProductManeger _aProductManeger = new SellProductManeger();
-
-                foreach (string selectedItemToDelete in itemToBeDeleteList)
+                if (deleteItemFromSellProductTableSuccess)
                 {
-                    bool deleteSuccess = _aProductManeger.DeleteSelectRow(selectedItemToDelete, id);
+                    MessageBox.Show("Item successfully deleted from Sell Product table");
 
+                }
+                else
+                {
+                    MessageBox.Show("Error, Item can not be deleted from Sell Product table");
                 }
 
 
 
 
+            }
+
+
+
+        }
+
+        //for (int i = 0; i < sellReturnDataGridView.Rows.Count - 1; i++)
+            //{
+
+            //    bool status2 = false;
+            //    for (int j = 0; j < 1; j++)
+            //    {
+            //        SellProduct aSellProduct = new SellProduct();
+
+            //        aSellProduct.Quantity = Convert.ToInt32(sellReturnDataGridView.Rows[i].Cells[j + 1].Value);
+            //        aSellProduct.UnitPrice = Convert.ToDouble(sellReturnDataGridView.Rows[i].Cells[j + 2].Value);
+            //        aSellProduct.TotalPrice = Convert.ToDouble(sellReturnDataGridView.Rows[i].Cells[j + 3].Value);
+            //        aSellProduct.ItemName = (string) sellReturnDataGridView.Rows[i].Cells[j].Value;
+
+
+                    
+
+            //        string productNameFromGridView = aSellProduct.ItemName;
+
+
+
+
+            //        StockManager _aStockManager = new StockManager();
+                    
+            //        //----Updating stockTable after pressing AddToUpdateSellReturnButton using Edit button-------
+
+                    
+            //        //Stock _aStock = new Stock();
+
+            //        //_aStock = _aStockManager.GetCurrentStockInfo(productNameFromGridView);
+            //        //string productNameFromDatabase = _aStock.ProductName;
+
+
+
+
+            //        // Updating StockTable from delete button
+            //        foreach (Stock stock in _aStockList)
+            //        {
+                        
+            //            bool updateStockSuccess = false;
+            //            updateStockSuccess = _aStockManager.UpdateAllStockInfoUsingList(stock);
+            //            if (updateStockSuccess)
+            //            {
+            //                MessageBox.Show("Successfully updated stock Stock info inf stock table");
+            //            }
+            //            else
+            //            {
+            //                MessageBox.Show("Error updating stock info");
+            //            }
+            //        }
+
+
+            //    }
+            
 
 
             
+          
 
             ProductInfoClear();
+            CustomerInfoClear();
 
-                CustomerInfoClear();
+            productsToBeDeleted.Clear();
 
             
         }

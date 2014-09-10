@@ -28,7 +28,9 @@ namespace DEPOTManagementAndPOS.UI
             donePanel.Enabled = false;
 
             AddButtonColumnEdit();
-            
+
+            addItemsButton.Enabled = false;
+
 
         }
 
@@ -54,6 +56,7 @@ namespace DEPOTManagementAndPOS.UI
         private void addItemsButton_Click(object sender, EventArgs e)
         {
 
+            
             customerInfoGroupBox.Enabled = true;
             donePanel.Enabled = true;
 
@@ -62,7 +65,7 @@ namespace DEPOTManagementAndPOS.UI
             String itemName = itemNameForSellTextBox.Text;
             int quantity;
             double unitPrice;
-            if (!string.IsNullOrEmpty(quantityTextBox.Text))
+            if (!string.IsNullOrEmpty(quantityTextBox.Text) && !string.IsNullOrEmpty(unitPriceTextBox.Text))
             {
                 quantity = Convert.ToInt32(quantityTextBox.Text);
                 unitPrice = Convert.ToDouble(unitPriceTextBox.Text);
@@ -75,12 +78,20 @@ namespace DEPOTManagementAndPOS.UI
             
             double totalPrice = _aSellProduct.GetTotalPrice(quantity,unitPrice);
 
-            selectedItemDataGridView.Rows.Add(itemName, quantity, unitPrice, totalPrice);
+            if (quantity > 0 && unitPrice >= 0.01)
+            {
+                selectedItemDataGridView.Rows.Add(itemName, quantity, unitPrice, totalPrice);    
+            }
+            else
+            {
+                MessageBox.Show("Please enter quantity > 0 and unit price >= 0.01");
+            }
+            
 
             itemNameForSellTextBox.Clear();
             quantityTextBox.Clear();
             unitPriceTextBox.Clear();
-
+            totalPricePerProductTextBox.Clear();
             totaItemTakenCounter++;
             totalItemTakenLabel.Text = totaItemTakenCounter.ToString();
 
@@ -90,7 +101,7 @@ namespace DEPOTManagementAndPOS.UI
             grandTotal=_aSellProduct.GetGrandTotal(grandTotal,totalPrice);
             grandTotalTextBox.Text = grandTotal.ToString();
 
-
+            //this.Enabled = false;
 
 
 
@@ -219,10 +230,6 @@ namespace DEPOTManagementAndPOS.UI
                     }
                     
                     
-                    
-                    
-                 
-
                     _aSellProductList.Add(aSellProduct);
                 }
             }
@@ -276,6 +283,7 @@ namespace DEPOTManagementAndPOS.UI
                 
                 double totalPrice = aSellProduct.GetTotalPrice(aSellProduct.Quantity, aSellProduct.UnitPrice);
                 totalPricePerProductTextBox.Text = totalPrice.ToString();
+                
 
 
             }
@@ -283,6 +291,7 @@ namespace DEPOTManagementAndPOS.UI
             {
                 aSellProduct.UnitPrice = 0;
                 totalPricePerProductTextBox.Clear();
+                
             }
 
 
@@ -434,6 +443,19 @@ namespace DEPOTManagementAndPOS.UI
                 addItemsButton.Enabled = true;
                 inStockTextBox.Text = quantityStock.ToString();
             }
+
+            if (string.IsNullOrEmpty(quantityTextBox.Text))
+            {
+                addItemsButton.Enabled = false;
+            }
+            else if (!string.IsNullOrEmpty(unitPriceTextBox.Text))
+            {
+                addItemsButton.Enabled = false;
+            }
+            else
+            {
+                addItemsButton.Enabled = true;
+            }
         }
 
         private void purchaseNewButton_Click(object sender, EventArgs e)
@@ -512,22 +534,21 @@ namespace DEPOTManagementAndPOS.UI
 
         }
 
-        private void purchaseInfoButton_Click(object sender, EventArgs e)
+        private void refreshButton_Click(object sender, EventArgs e)
         {
-            PurchaseInfoUi aPurchaseInfoUi=new PurchaseInfoUi();
-            aPurchaseInfoUi.ShowDialog();
+            PurchaseManager _aPurchaseManager = new PurchaseManager();
+
+            string[] productNameFromJoinedDatabase = _aPurchaseManager.GetProductNameWithCategoryAndBrandName().Select(x => string.Format("{0} {1} {2}", x.CategoryEntry.Name, x.BrandEntry.Name, x.Product.ProductNameExtention)).ToArray();
+
+
+            itemNameForSellTextBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            itemNameForSellTextBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+            var autoComplete = new AutoCompleteStringCollection();
+            autoComplete.AddRange(productNameFromJoinedDatabase);
+            itemNameForSellTextBox.AutoCompleteCustomSource = autoComplete;
         }
-
-       
-
-
-
-   
-
         
-
-      
-
       
     }
 }

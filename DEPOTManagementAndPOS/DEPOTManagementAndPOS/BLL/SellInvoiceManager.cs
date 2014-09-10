@@ -49,10 +49,12 @@ namespace DEPOTManagementAndPOS.BLL
         }
 
         private SellProductGateway _aSellProductGateway;
-        public bool UpdateAllSellProductUsingOrderNo(SellProduct aSellProduct,string id)
+        
+
+        public long GetSellInvoiceIdUsingOrderNo(Int64 orderNo)
         {
             _aSellProductGateway = new SellProductGateway();
-            return _aSellProductGateway.UpdateAllSellProductUsingOrderNo(aSellProduct,id);
+            return _aSellProductGateway.GetSellInvoiceIdUsingOrderNo(orderNo);
         }
     }
 }

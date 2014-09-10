@@ -33,6 +33,9 @@
             this.productInfodataGridView = new System.Windows.Forms.DataGridView();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addNewItemButton = new System.Windows.Forms.Button();
+            this.viewDepotButton = new System.Windows.Forms.Button();
+            this.doneButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productInfodataGridView)).BeginInit();
@@ -68,6 +71,7 @@
             this.productInfodataGridView.Name = "productInfodataGridView";
             this.productInfodataGridView.Size = new System.Drawing.Size(1020, 349);
             this.productInfodataGridView.TabIndex = 0;
+            this.productInfodataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.productInfodataGridView_CellContentClick);
             // 
             // Column2
             // 
@@ -79,16 +83,45 @@
             this.Column3.HeaderText = "In Stock";
             this.Column3.Name = "Column3";
             // 
+            // addNewItemButton
+            // 
+            this.addNewItemButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addNewItemButton.Location = new System.Drawing.Point(155, 417);
+            this.addNewItemButton.Name = "addNewItemButton";
+            this.addNewItemButton.Size = new System.Drawing.Size(132, 56);
+            this.addNewItemButton.TabIndex = 1;
+            this.addNewItemButton.Text = "Add New Item";
+            this.addNewItemButton.UseVisualStyleBackColor = true;
+            // 
+            // viewDepotButton
+            // 
+            this.viewDepotButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.viewDepotButton.Location = new System.Drawing.Point(329, 417);
+            this.viewDepotButton.Name = "viewDepotButton";
+            this.viewDepotButton.Size = new System.Drawing.Size(132, 56);
+            this.viewDepotButton.TabIndex = 1;
+            this.viewDepotButton.Text = "Veiw Depot";
+            this.viewDepotButton.UseVisualStyleBackColor = true;
+            // 
+            // doneButton
+            // 
+            this.doneButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.doneButton.Location = new System.Drawing.Point(714, 417);
+            this.doneButton.Name = "doneButton";
+            this.doneButton.Size = new System.Drawing.Size(132, 56);
+            this.doneButton.TabIndex = 1;
+            this.doneButton.Text = "Done";
+            this.doneButton.UseVisualStyleBackColor = true;
+            // 
             // cancelButton
             // 
             this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelButton.Location = new System.Drawing.Point(502, 417);
+            this.cancelButton.Location = new System.Drawing.Point(876, 417);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(132, 56);
             this.cancelButton.TabIndex = 1;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // DepotInfoUI
             // 
@@ -97,6 +130,9 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1057, 485);
             this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.doneButton);
+            this.Controls.Add(this.viewDepotButton);
+            this.Controls.Add(this.addNewItemButton);
             this.Controls.Add(this.panel1);
             this.Name = "DepotInfoUI";
             this.Text = "Depot Info";
@@ -111,6 +147,9 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView productInfodataGridView;
+        private System.Windows.Forms.Button addNewItemButton;
+        private System.Windows.Forms.Button viewDepotButton;
+        private System.Windows.Forms.Button doneButton;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;

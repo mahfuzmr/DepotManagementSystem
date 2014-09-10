@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DEPOTManagementAndPOS.Model;
-using iTextSharp.text;
 
 namespace DEPOTManagementAndPOS.DLL
 {
@@ -66,10 +65,6 @@ namespace DEPOTManagementAndPOS.DLL
 
         public bool UpdateAllStockInfo(Stock aStock)
         {
-
-
-
-            
             _connection.Open();
 
             string query = string.Format("UPDATE StockTable SET QuantityInStock={0} WHERE ProductName='{1}'",
@@ -125,34 +120,66 @@ namespace DEPOTManagementAndPOS.DLL
             return currentQuantity;
         }
 
-        public List<Stock> GetTotalStockInfo()
+        public bool UpdateAllStockInfoUsingList(Stock aStock)
         {
             _connection.Open();
-            Stock aStock;
-            List<Stock>aStockList=new List<Stock>();
-            
-            string query = string.Format("SELECT  ProductName,QuantityInStock FROM StockTable");
+
+            string query = string.Format("UPDATE StockTable SET QuantityInStock={0} WHERE ProductName='{1}'",
+                aStock.QuantityInStock, aStock.ProductName);
+            _command = new SqlCommand(query, _connection);
+            int affectedRows = _command.ExecuteNonQuery();
+            _connection.Close();
+            if (affectedRows > 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public List<Stock> ViewAllDepo()
+        {
+            _connection.Open();
+           
+
+            List<Stock> allStockList = new List<Stock>();
+            string query = string.Format("SELECT * From StockTable");
             _command = new SqlCommand(query, _connection);
             SqlDataReader aReader = _command.ExecuteReader();
 
-            if (aReader.HasRows)
+
+
+            while (aReader.Read())
             {
-                while (aReader.Read())
-                {
-                    aStock=new Stock();
-                    aStock.QuantityInStock = Convert.ToInt32(aReader[1]);
-                    aStock.ProductName = aReader[0].ToString();
-                    aStockList.Add(aStock);
-
-
-
-
-
-
-                }
+                _aStock = new Stock();
+                _aStock.ProductName = (string) (aReader[1]);
+                _aStock.QuantityInStock= (int) aReader[2];
+                allStockList.Add(_aStock);
             }
+
+
             _connection.Close();
-            return aStockList;
+            return allStockList;
+
+        }
+
+        public bool DeleleStock(Stock aStock)
+        {
+
+            _connection.Open();
+            string query =
+                string.Format("DELETE FROM StockTable " +
+                              "WHERE ProductName= '{0}'",aStock.ProductName);
+
+
+            _command = new SqlCommand(query, _connection);
+            int affectedRows = _command.ExecuteNonQuery();
+            _connection.Close();
+            if (affectedRows > 0)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

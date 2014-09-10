@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.closeProductEntryButton = new System.Windows.Forms.Button();
             this.productExtensionEntryTextBox = new System.Windows.Forms.TextBox();
             this.saveProductButton = new System.Windows.Forms.Button();
             this.addNewBrandButton = new System.Windows.Forms.Button();
@@ -39,7 +40,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.closeProductEntryButton = new System.Windows.Forms.Button();
+            this.refreshAllButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -56,6 +57,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.refreshAllButton);
             this.groupBox1.Controls.Add(this.closeProductEntryButton);
             this.groupBox1.Controls.Add(this.productExtensionEntryTextBox);
             this.groupBox1.Controls.Add(this.saveProductButton);
@@ -72,6 +74,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add New Product";
+            // 
+            // closeProductEntryButton
+            // 
+            this.closeProductEntryButton.Location = new System.Drawing.Point(201, 163);
+            this.closeProductEntryButton.Name = "closeProductEntryButton";
+            this.closeProductEntryButton.Size = new System.Drawing.Size(110, 35);
+            this.closeProductEntryButton.TabIndex = 16;
+            this.closeProductEntryButton.Text = "Close";
+            this.closeProductEntryButton.UseVisualStyleBackColor = true;
+            this.closeProductEntryButton.Click += new System.EventHandler(this.closeProductEntryButton_Click);
             // 
             // productExtensionEntryTextBox
             // 
@@ -154,15 +166,15 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "Category : ";
             // 
-            // closeProductEntryButton
+            // refreshAllButton
             // 
-            this.closeProductEntryButton.Location = new System.Drawing.Point(201, 163);
-            this.closeProductEntryButton.Name = "closeProductEntryButton";
-            this.closeProductEntryButton.Size = new System.Drawing.Size(110, 35);
-            this.closeProductEntryButton.TabIndex = 16;
-            this.closeProductEntryButton.Text = "Close";
-            this.closeProductEntryButton.UseVisualStyleBackColor = true;
-            this.closeProductEntryButton.Click += new System.EventHandler(this.closeProductEntryButton_Click);
+            this.refreshAllButton.Location = new System.Drawing.Point(428, 120);
+            this.refreshAllButton.Name = "refreshAllButton";
+            this.refreshAllButton.Size = new System.Drawing.Size(154, 35);
+            this.refreshAllButton.TabIndex = 17;
+            this.refreshAllButton.Text = "Refresh All";
+            this.refreshAllButton.UseVisualStyleBackColor = true;
+            this.refreshAllButton.Click += new System.EventHandler(this.refreshAllButton_Click);
             // 
             // ProductEntryUi
             // 
@@ -195,5 +207,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button closeProductEntryButton;
+        private System.Windows.Forms.Button refreshAllButton;
     }
 }

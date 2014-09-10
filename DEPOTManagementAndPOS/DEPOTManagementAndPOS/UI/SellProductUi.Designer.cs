@@ -80,7 +80,7 @@
             this.dailySellReportUiLoadButton = new System.Windows.Forms.Button();
             this.purchaseNewButton = new System.Windows.Forms.Button();
             this.pdfCreateButton = new System.Windows.Forms.Button();
-            this.purchaseInfoButton = new System.Windows.Forms.Button();
+            this.refreshButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.customerInfoGroupBox.SuspendLayout();
@@ -109,16 +109,16 @@
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(4, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1122, 695);
+            this.panel1.Size = new System.Drawing.Size(1170, 695);
             this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panel2.Controls.Add(this.customerInfoGroupBox);
-            this.panel2.Location = new System.Drawing.Point(619, 8);
+            this.panel2.Location = new System.Drawing.Point(631, 8);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(497, 366);
+            this.panel2.Size = new System.Drawing.Size(528, 366);
             this.panel2.TabIndex = 10;
             // 
             // customerInfoGroupBox
@@ -136,7 +136,7 @@
             this.customerInfoGroupBox.Controls.Add(this.label5);
             this.customerInfoGroupBox.Location = new System.Drawing.Point(9, 10);
             this.customerInfoGroupBox.Name = "customerInfoGroupBox";
-            this.customerInfoGroupBox.Size = new System.Drawing.Size(472, 338);
+            this.customerInfoGroupBox.Size = new System.Drawing.Size(510, 338);
             this.customerInfoGroupBox.TabIndex = 5;
             this.customerInfoGroupBox.TabStop = false;
             this.customerInfoGroupBox.Text = "Customer Info";
@@ -227,9 +227,9 @@
             // 
             this.donePanel.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.donePanel.Controls.Add(this.groupBox4);
-            this.donePanel.Location = new System.Drawing.Point(619, 380);
+            this.donePanel.Location = new System.Drawing.Point(631, 380);
             this.donePanel.Name = "donePanel";
-            this.donePanel.Size = new System.Drawing.Size(497, 294);
+            this.donePanel.Size = new System.Drawing.Size(528, 294);
             this.donePanel.TabIndex = 10;
             // 
             // groupBox4
@@ -247,14 +247,14 @@
             this.groupBox4.Controls.Add(this.label14);
             this.groupBox4.Location = new System.Drawing.Point(9, 9);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(472, 271);
+            this.groupBox4.Size = new System.Drawing.Size(510, 271);
             this.groupBox4.TabIndex = 11;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Transection";
             // 
             // paidTextBox
             // 
-            this.paidTextBox.Location = new System.Drawing.Point(169, 75);
+            this.paidTextBox.Location = new System.Drawing.Point(175, 75);
             this.paidTextBox.Name = "paidTextBox";
             this.paidTextBox.Size = new System.Drawing.Size(145, 23);
             this.paidTextBox.TabIndex = 2;
@@ -263,7 +263,7 @@
             // cashCheckBox
             // 
             this.cashCheckBox.AutoSize = true;
-            this.cashCheckBox.Location = new System.Drawing.Point(195, 22);
+            this.cashCheckBox.Location = new System.Drawing.Point(201, 22);
             this.cashCheckBox.Name = "cashCheckBox";
             this.cashCheckBox.Size = new System.Drawing.Size(59, 21);
             this.cashCheckBox.TabIndex = 9;
@@ -274,7 +274,7 @@
             // chequeCheckBox
             // 
             this.chequeCheckBox.AutoSize = true;
-            this.chequeCheckBox.Location = new System.Drawing.Point(269, 22);
+            this.chequeCheckBox.Location = new System.Drawing.Point(275, 22);
             this.chequeCheckBox.Name = "chequeCheckBox";
             this.chequeCheckBox.Size = new System.Drawing.Size(76, 21);
             this.chequeCheckBox.TabIndex = 9;
@@ -285,7 +285,7 @@
             // totalItemTakenLabel
             // 
             this.totalItemTakenLabel.AutoSize = true;
-            this.totalItemTakenLabel.Location = new System.Drawing.Point(143, 111);
+            this.totalItemTakenLabel.Location = new System.Drawing.Point(149, 111);
             this.totalItemTakenLabel.Name = "totalItemTakenLabel";
             this.totalItemTakenLabel.Size = new System.Drawing.Size(0, 17);
             this.totalItemTakenLabel.TabIndex = 7;
@@ -293,7 +293,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(16, 54);
+            this.label12.Location = new System.Drawing.Point(22, 54);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(88, 17);
             this.label12.TabIndex = 0;
@@ -302,7 +302,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(15, 111);
+            this.label10.Location = new System.Drawing.Point(21, 111);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(106, 17);
             this.label10.TabIndex = 6;
@@ -310,7 +310,7 @@
             // 
             // dueTextBox
             // 
-            this.dueTextBox.Location = new System.Drawing.Point(321, 75);
+            this.dueTextBox.Location = new System.Drawing.Point(327, 75);
             this.dueTextBox.Name = "dueTextBox";
             this.dueTextBox.ReadOnly = true;
             this.dueTextBox.Size = new System.Drawing.Size(145, 23);
@@ -319,7 +319,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(166, 49);
+            this.label13.Location = new System.Drawing.Point(172, 49);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(48, 17);
             this.label13.TabIndex = 0;
@@ -328,7 +328,7 @@
             // grandTotalTextBox
             // 
             this.grandTotalTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grandTotalTextBox.Location = new System.Drawing.Point(18, 75);
+            this.grandTotalTextBox.Location = new System.Drawing.Point(24, 75);
             this.grandTotalTextBox.Name = "grandTotalTextBox";
             this.grandTotalTextBox.ReadOnly = true;
             this.grandTotalTextBox.Size = new System.Drawing.Size(145, 23);
@@ -337,7 +337,7 @@
             // doneButton
             // 
             this.doneButton.BackColor = System.Drawing.Color.SeaGreen;
-            this.doneButton.Location = new System.Drawing.Point(322, 108);
+            this.doneButton.Location = new System.Drawing.Point(328, 108);
             this.doneButton.Name = "doneButton";
             this.doneButton.Size = new System.Drawing.Size(144, 55);
             this.doneButton.TabIndex = 3;
@@ -348,7 +348,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(318, 49);
+            this.label14.Location = new System.Drawing.Point(324, 49);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(46, 17);
             this.label14.TabIndex = 0;
@@ -357,6 +357,7 @@
             // ProductInfoGroupBox
             // 
             this.ProductInfoGroupBox.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ProductInfoGroupBox.Controls.Add(this.refreshButton);
             this.ProductInfoGroupBox.Controls.Add(this.selectedItemDataGridView);
             this.ProductInfoGroupBox.Controls.Add(this.totalPricePerProductTextBox);
             this.ProductInfoGroupBox.Controls.Add(this.totalPricePerProductLabel);
@@ -369,7 +370,7 @@
             this.ProductInfoGroupBox.Controls.Add(this.label4);
             this.ProductInfoGroupBox.Location = new System.Drawing.Point(17, 14);
             this.ProductInfoGroupBox.Name = "ProductInfoGroupBox";
-            this.ProductInfoGroupBox.Size = new System.Drawing.Size(583, 646);
+            this.ProductInfoGroupBox.Size = new System.Drawing.Size(594, 646);
             this.ProductInfoGroupBox.TabIndex = 1;
             this.ProductInfoGroupBox.TabStop = false;
             this.ProductInfoGroupBox.Text = "Product Info";
@@ -437,13 +438,13 @@
             // 
             this.itemNameForSellTextBox.Location = new System.Drawing.Point(106, 32);
             this.itemNameForSellTextBox.Name = "itemNameForSellTextBox";
-            this.itemNameForSellTextBox.Size = new System.Drawing.Size(456, 23);
+            this.itemNameForSellTextBox.Size = new System.Drawing.Size(359, 23);
             this.itemNameForSellTextBox.TabIndex = 0;
             this.itemNameForSellTextBox.Leave += new System.EventHandler(this.itemNameForSellTextBox_Leave);
             // 
             // addItemsButton
             // 
-            this.addItemsButton.Location = new System.Drawing.Point(306, 162);
+            this.addItemsButton.Location = new System.Drawing.Point(437, 164);
             this.addItemsButton.Name = "addItemsButton";
             this.addItemsButton.Size = new System.Drawing.Size(133, 29);
             this.addItemsButton.TabIndex = 4;
@@ -499,7 +500,7 @@
             this.panel3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panel3.Location = new System.Drawing.Point(7, 8);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(604, 666);
+            this.panel3.Size = new System.Drawing.Size(615, 666);
             this.panel3.TabIndex = 11;
             // 
             // inStockTextBox
@@ -515,9 +516,9 @@
             // 
             this.groupBox3.Controls.Add(this.inStockTextBox);
             this.groupBox3.Controls.Add(this.label16);
-            this.groupBox3.Location = new System.Drawing.Point(1128, 5);
+            this.groupBox3.Location = new System.Drawing.Point(1176, 5);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(151, 97);
+            this.groupBox3.Size = new System.Drawing.Size(147, 97);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Selected Item Info";
@@ -539,9 +540,9 @@
             this.addNewItemButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.addNewItemButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RosyBrown;
             this.addNewItemButton.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addNewItemButton.Location = new System.Drawing.Point(1128, 126);
+            this.addNewItemButton.Location = new System.Drawing.Point(1176, 117);
             this.addNewItemButton.Name = "addNewItemButton";
-            this.addNewItemButton.Size = new System.Drawing.Size(151, 50);
+            this.addNewItemButton.Size = new System.Drawing.Size(155, 50);
             this.addNewItemButton.TabIndex = 6;
             this.addNewItemButton.Text = "Add New Items";
             this.addNewItemButton.UseVisualStyleBackColor = false;
@@ -551,9 +552,9 @@
             // 
             this.stockInfoUiLoadButton.BackColor = System.Drawing.Color.CadetBlue;
             this.stockInfoUiLoadButton.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stockInfoUiLoadButton.Location = new System.Drawing.Point(1128, 240);
+            this.stockInfoUiLoadButton.Location = new System.Drawing.Point(1176, 231);
             this.stockInfoUiLoadButton.Name = "stockInfoUiLoadButton";
-            this.stockInfoUiLoadButton.Size = new System.Drawing.Size(151, 50);
+            this.stockInfoUiLoadButton.Size = new System.Drawing.Size(155, 50);
             this.stockInfoUiLoadButton.TabIndex = 6;
             this.stockInfoUiLoadButton.Text = "Stock Report";
             this.stockInfoUiLoadButton.UseVisualStyleBackColor = false;
@@ -565,9 +566,9 @@
             this.sellReturnUiLoadButton.FlatAppearance.BorderSize = 0;
             this.sellReturnUiLoadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sellReturnUiLoadButton.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sellReturnUiLoadButton.Location = new System.Drawing.Point(1129, 384);
+            this.sellReturnUiLoadButton.Location = new System.Drawing.Point(1177, 375);
             this.sellReturnUiLoadButton.Name = "sellReturnUiLoadButton";
-            this.sellReturnUiLoadButton.Size = new System.Drawing.Size(151, 50);
+            this.sellReturnUiLoadButton.Size = new System.Drawing.Size(155, 50);
             this.sellReturnUiLoadButton.TabIndex = 7;
             this.sellReturnUiLoadButton.Text = "Sell Return";
             this.sellReturnUiLoadButton.UseVisualStyleBackColor = false;
@@ -580,9 +581,9 @@
             this.dailySellReportUiLoadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dailySellReportUiLoadButton.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dailySellReportUiLoadButton.ForeColor = System.Drawing.Color.YellowGreen;
-            this.dailySellReportUiLoadButton.Location = new System.Drawing.Point(1128, 326);
+            this.dailySellReportUiLoadButton.Location = new System.Drawing.Point(1176, 317);
             this.dailySellReportUiLoadButton.Name = "dailySellReportUiLoadButton";
-            this.dailySellReportUiLoadButton.Size = new System.Drawing.Size(151, 50);
+            this.dailySellReportUiLoadButton.Size = new System.Drawing.Size(155, 50);
             this.dailySellReportUiLoadButton.TabIndex = 8;
             this.dailySellReportUiLoadButton.Text = "Daily Sell Report";
             this.dailySellReportUiLoadButton.UseVisualStyleBackColor = false;
@@ -593,9 +594,9 @@
             this.purchaseNewButton.BackColor = System.Drawing.Color.CadetBlue;
             this.purchaseNewButton.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.purchaseNewButton.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.purchaseNewButton.Location = new System.Drawing.Point(1128, 182);
+            this.purchaseNewButton.Location = new System.Drawing.Point(1176, 173);
             this.purchaseNewButton.Name = "purchaseNewButton";
-            this.purchaseNewButton.Size = new System.Drawing.Size(151, 50);
+            this.purchaseNewButton.Size = new System.Drawing.Size(155, 50);
             this.purchaseNewButton.TabIndex = 9;
             this.purchaseNewButton.Text = "New Purchase";
             this.purchaseNewButton.UseVisualStyleBackColor = false;
@@ -605,37 +606,32 @@
             // 
             this.pdfCreateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pdfCreateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pdfCreateButton.Location = new System.Drawing.Point(1128, 647);
+            this.pdfCreateButton.Location = new System.Drawing.Point(1176, 489);
             this.pdfCreateButton.Name = "pdfCreateButton";
-            this.pdfCreateButton.Size = new System.Drawing.Size(151, 50);
+            this.pdfCreateButton.Size = new System.Drawing.Size(155, 50);
             this.pdfCreateButton.TabIndex = 6;
             this.pdfCreateButton.Text = "Print Invoice";
             this.pdfCreateButton.UseVisualStyleBackColor = true;
             this.pdfCreateButton.Click += new System.EventHandler(this.pdfCreateButton_Click);
             // 
-            // purchaseInfoButton
+            // refreshButton
             // 
-            this.purchaseInfoButton.BackColor = System.Drawing.Color.Ivory;
-            this.purchaseInfoButton.FlatAppearance.BorderSize = 0;
-            this.purchaseInfoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.purchaseInfoButton.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.purchaseInfoButton.Location = new System.Drawing.Point(1128, 453);
-            this.purchaseInfoButton.Name = "purchaseInfoButton";
-            this.purchaseInfoButton.Size = new System.Drawing.Size(151, 50);
-            this.purchaseInfoButton.TabIndex = 7;
-            this.purchaseInfoButton.Text = "Purchase Info";
-            this.purchaseInfoButton.UseVisualStyleBackColor = false;
-            this.purchaseInfoButton.Click += new System.EventHandler(this.purchaseInfoButton_Click);
+            this.refreshButton.Location = new System.Drawing.Point(471, 30);
+            this.refreshButton.Name = "refreshButton";
+            this.refreshButton.Size = new System.Drawing.Size(100, 28);
+            this.refreshButton.TabIndex = 10;
+            this.refreshButton.Text = "Refresh";
+            this.refreshButton.UseVisualStyleBackColor = true;
+            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
             // 
             // SellProductUi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1284, 701);
+            this.ClientSize = new System.Drawing.Size(1344, 701);
             this.Controls.Add(this.purchaseNewButton);
             this.Controls.Add(this.dailySellReportUiLoadButton);
-            this.Controls.Add(this.purchaseInfoButton);
             this.Controls.Add(this.sellReturnUiLoadButton);
             this.Controls.Add(this.pdfCreateButton);
             this.Controls.Add(this.stockInfoUiLoadButton);
@@ -718,6 +714,6 @@
         private System.Windows.Forms.Button purchaseNewButton;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button pdfCreateButton;
-        private System.Windows.Forms.Button purchaseInfoButton;
+        private System.Windows.Forms.Button refreshButton;
     }
 }
