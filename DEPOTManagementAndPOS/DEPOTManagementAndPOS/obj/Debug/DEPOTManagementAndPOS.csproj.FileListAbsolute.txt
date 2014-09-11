@@ -92,3 +92,6 @@ C:\Users\MAROB\Desktop\MahfuzGit\DepotManagementSystem\DEPOTManagementAndPOS\DEP
 C:\Users\MAROB\Desktop\MahfuzGit\DepotManagementSystem\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.csproj.GenerateResource.Cache
 C:\Users\MAROB\Desktop\MahfuzGit\DepotManagementSystem\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.exe
 C:\Users\MAROB\Desktop\MahfuzGit\DepotManagementSystem\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.pdb
+C:\Git\DepotManagementSystem\DEPOTManagementAndPOS\DEPOTManagementAndPOS\bin\Debug\DEPOTManagementAndPOS.exe.config
+C:\Git\DepotManagementSystem\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.exe
+C:\Git\DepotManagementSystem\DEPOTManagementAndPOS\DEPOTManagementAndPOS\obj\Debug\DEPOTManagementAndPOS.pdb
