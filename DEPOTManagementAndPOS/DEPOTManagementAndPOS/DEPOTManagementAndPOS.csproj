@@ -122,11 +122,23 @@
     <Compile Include="UI\PurchaseEntryUi.Designer.cs">
       <DependentUpon>PurchaseEntryUi.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\PurchaseInfoUi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\PurchaseInfoUi.designer.cs">
+      <DependentUpon>PurchaseInfoUi.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\SellConformationUi.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI\SellConformationUi.Designer.cs">
       <DependentUpon>SellConformationUi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SellProductReportForIndividualProductUi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\SellProductReportForIndividualProductUi.Designer.cs">
+      <DependentUpon>SellProductReportForIndividualProductUi.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\SellProductUi.cs">
       <SubType>Form</SubType>
@@ -178,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\SellConformationUi.resx">
       <DependentUpon>SellConformationUi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\SellProductReportForIndividualProductUi.resx">
+      <DependentUpon>SellProductReportForIndividualProductUi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\SellProductUi.resx">
       <DependentUpon>SellProductUi.cs</DependentUpon>

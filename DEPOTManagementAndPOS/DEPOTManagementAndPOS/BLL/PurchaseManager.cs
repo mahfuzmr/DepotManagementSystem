@@ -29,6 +29,11 @@ namespace DEPOTManagementAndPOS.BLL
             return _aPurchaseGateway.GetCurrentStockInfo(name);
         }
 
+        public List<Purchase> GetPurchaseInfo()
+        {
+            _aPurchaseGateway = new PurchaseGateway();
+            return _aPurchaseGateway.GetPurchaseInfo();
+        }
         public bool UpdateAllPurchaseInfo(Purchase aPurchase)
         {
             _aPurchaseGateway = new PurchaseGateway();

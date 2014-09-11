@@ -56,6 +56,7 @@
             this.doneButton = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.ProductInfoGroupBox = new System.Windows.Forms.GroupBox();
+            this.refreshButton = new System.Windows.Forms.Button();
             this.selectedItemDataGridView = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,11 +77,11 @@
             this.label16 = new System.Windows.Forms.Label();
             this.addNewItemButton = new System.Windows.Forms.Button();
             this.stockInfoUiLoadButton = new System.Windows.Forms.Button();
-            this.sellReturnUiLoadButton = new System.Windows.Forms.Button();
+            this.sellReportForIndividualProductUiLoadButton = new System.Windows.Forms.Button();
             this.dailySellReportUiLoadButton = new System.Windows.Forms.Button();
             this.purchaseNewButton = new System.Windows.Forms.Button();
-            this.pdfCreateButton = new System.Windows.Forms.Button();
-            this.refreshButton = new System.Windows.Forms.Button();
+            this.purchaseReportButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.customerInfoGroupBox.SuspendLayout();
@@ -375,6 +376,16 @@
             this.ProductInfoGroupBox.TabStop = false;
             this.ProductInfoGroupBox.Text = "Product Info";
             // 
+            // refreshButton
+            // 
+            this.refreshButton.Location = new System.Drawing.Point(471, 30);
+            this.refreshButton.Name = "refreshButton";
+            this.refreshButton.Size = new System.Drawing.Size(100, 28);
+            this.refreshButton.TabIndex = 10;
+            this.refreshButton.Text = "Refresh";
+            this.refreshButton.UseVisualStyleBackColor = true;
+            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
+            // 
             // selectedItemDataGridView
             // 
             this.selectedItemDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -537,8 +548,11 @@
             // addNewItemButton
             // 
             this.addNewItemButton.BackColor = System.Drawing.Color.CadetBlue;
+            this.addNewItemButton.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.addNewItemButton.FlatAppearance.BorderSize = 2;
             this.addNewItemButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.addNewItemButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RosyBrown;
+            this.addNewItemButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addNewItemButton.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addNewItemButton.Location = new System.Drawing.Point(1176, 117);
             this.addNewItemButton.Name = "addNewItemButton";
@@ -551,8 +565,12 @@
             // stockInfoUiLoadButton
             // 
             this.stockInfoUiLoadButton.BackColor = System.Drawing.Color.CadetBlue;
+            this.stockInfoUiLoadButton.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.stockInfoUiLoadButton.FlatAppearance.BorderSize = 2;
+            this.stockInfoUiLoadButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RosyBrown;
+            this.stockInfoUiLoadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.stockInfoUiLoadButton.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stockInfoUiLoadButton.Location = new System.Drawing.Point(1176, 231);
+            this.stockInfoUiLoadButton.Location = new System.Drawing.Point(1176, 294);
             this.stockInfoUiLoadButton.Name = "stockInfoUiLoadButton";
             this.stockInfoUiLoadButton.Size = new System.Drawing.Size(155, 50);
             this.stockInfoUiLoadButton.TabIndex = 6;
@@ -560,28 +578,32 @@
             this.stockInfoUiLoadButton.UseVisualStyleBackColor = false;
             this.stockInfoUiLoadButton.Click += new System.EventHandler(this.stockInfoUiLoadButton_Click);
             // 
-            // sellReturnUiLoadButton
+            // sellReportForIndividualProductUiLoadButton
             // 
-            this.sellReturnUiLoadButton.BackColor = System.Drawing.Color.Ivory;
-            this.sellReturnUiLoadButton.FlatAppearance.BorderSize = 0;
-            this.sellReturnUiLoadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.sellReturnUiLoadButton.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sellReturnUiLoadButton.Location = new System.Drawing.Point(1177, 375);
-            this.sellReturnUiLoadButton.Name = "sellReturnUiLoadButton";
-            this.sellReturnUiLoadButton.Size = new System.Drawing.Size(155, 50);
-            this.sellReturnUiLoadButton.TabIndex = 7;
-            this.sellReturnUiLoadButton.Text = "Sell Return";
-            this.sellReturnUiLoadButton.UseVisualStyleBackColor = false;
-            this.sellReturnUiLoadButton.Click += new System.EventHandler(this.sellReturnUiLoadButton_Click);
+            this.sellReportForIndividualProductUiLoadButton.BackColor = System.Drawing.Color.CadetBlue;
+            this.sellReportForIndividualProductUiLoadButton.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.sellReportForIndividualProductUiLoadButton.FlatAppearance.BorderSize = 2;
+            this.sellReportForIndividualProductUiLoadButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RosyBrown;
+            this.sellReportForIndividualProductUiLoadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.sellReportForIndividualProductUiLoadButton.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sellReportForIndividualProductUiLoadButton.Location = new System.Drawing.Point(1177, 412);
+            this.sellReportForIndividualProductUiLoadButton.Name = "sellReportForIndividualProductUiLoadButton";
+            this.sellReportForIndividualProductUiLoadButton.Size = new System.Drawing.Size(155, 50);
+            this.sellReportForIndividualProductUiLoadButton.TabIndex = 7;
+            this.sellReportForIndividualProductUiLoadButton.Text = "Sell Report";
+            this.sellReportForIndividualProductUiLoadButton.UseVisualStyleBackColor = false;
+            this.sellReportForIndividualProductUiLoadButton.Click += new System.EventHandler(this.sellReportForIndividualProductUiLoadButton_Click);
             // 
             // dailySellReportUiLoadButton
             // 
-            this.dailySellReportUiLoadButton.BackColor = System.Drawing.Color.Black;
-            this.dailySellReportUiLoadButton.FlatAppearance.BorderSize = 0;
+            this.dailySellReportUiLoadButton.BackColor = System.Drawing.Color.CadetBlue;
+            this.dailySellReportUiLoadButton.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.dailySellReportUiLoadButton.FlatAppearance.BorderSize = 2;
+            this.dailySellReportUiLoadButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RosyBrown;
             this.dailySellReportUiLoadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dailySellReportUiLoadButton.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dailySellReportUiLoadButton.ForeColor = System.Drawing.Color.YellowGreen;
-            this.dailySellReportUiLoadButton.Location = new System.Drawing.Point(1176, 317);
+            this.dailySellReportUiLoadButton.ForeColor = System.Drawing.Color.Black;
+            this.dailySellReportUiLoadButton.Location = new System.Drawing.Point(1176, 354);
             this.dailySellReportUiLoadButton.Name = "dailySellReportUiLoadButton";
             this.dailySellReportUiLoadButton.Size = new System.Drawing.Size(155, 50);
             this.dailySellReportUiLoadButton.TabIndex = 8;
@@ -592,6 +614,10 @@
             // purchaseNewButton
             // 
             this.purchaseNewButton.BackColor = System.Drawing.Color.CadetBlue;
+            this.purchaseNewButton.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.purchaseNewButton.FlatAppearance.BorderSize = 2;
+            this.purchaseNewButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RosyBrown;
+            this.purchaseNewButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.purchaseNewButton.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.purchaseNewButton.ForeColor = System.Drawing.SystemColors.ControlText;
             this.purchaseNewButton.Location = new System.Drawing.Point(1176, 173);
@@ -602,27 +628,38 @@
             this.purchaseNewButton.UseVisualStyleBackColor = false;
             this.purchaseNewButton.Click += new System.EventHandler(this.purchaseNewButton_Click);
             // 
-            // pdfCreateButton
+            // purchaseReportButton
             // 
-            this.pdfCreateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.pdfCreateButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pdfCreateButton.Location = new System.Drawing.Point(1176, 489);
-            this.pdfCreateButton.Name = "pdfCreateButton";
-            this.pdfCreateButton.Size = new System.Drawing.Size(155, 50);
-            this.pdfCreateButton.TabIndex = 6;
-            this.pdfCreateButton.Text = "Print Invoice";
-            this.pdfCreateButton.UseVisualStyleBackColor = true;
-            this.pdfCreateButton.Click += new System.EventHandler(this.pdfCreateButton_Click);
+            this.purchaseReportButton.BackColor = System.Drawing.Color.CadetBlue;
+            this.purchaseReportButton.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.purchaseReportButton.FlatAppearance.BorderSize = 2;
+            this.purchaseReportButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RosyBrown;
+            this.purchaseReportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.purchaseReportButton.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.purchaseReportButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.purchaseReportButton.Location = new System.Drawing.Point(1177, 470);
+            this.purchaseReportButton.Name = "purchaseReportButton";
+            this.purchaseReportButton.Size = new System.Drawing.Size(155, 50);
+            this.purchaseReportButton.TabIndex = 9;
+            this.purchaseReportButton.Text = "Purchase Report";
+            this.purchaseReportButton.UseVisualStyleBackColor = false;
+            this.purchaseReportButton.Click += new System.EventHandler(this.purchaseReportButton_Click);
             // 
-            // refreshButton
+            // button1
             // 
-            this.refreshButton.Location = new System.Drawing.Point(471, 30);
-            this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(100, 28);
-            this.refreshButton.TabIndex = 10;
-            this.refreshButton.Text = "Refresh";
-            this.refreshButton.UseVisualStyleBackColor = true;
-            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
+            this.button1.BackColor = System.Drawing.Color.CadetBlue;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.button1.FlatAppearance.BorderSize = 2;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RosyBrown;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(1176, 229);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(155, 50);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Sell Return";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.sellReturnUiLoadButton_Click);
             // 
             // SellProductUi
             // 
@@ -630,10 +667,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1344, 701);
+            this.Controls.Add(this.purchaseReportButton);
             this.Controls.Add(this.purchaseNewButton);
             this.Controls.Add(this.dailySellReportUiLoadButton);
-            this.Controls.Add(this.sellReturnUiLoadButton);
-            this.Controls.Add(this.pdfCreateButton);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.sellReportForIndividualProductUiLoadButton);
             this.Controls.Add(this.stockInfoUiLoadButton);
             this.Controls.Add(this.addNewItemButton);
             this.Controls.Add(this.groupBox3);
@@ -709,11 +747,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.Button sellReturnUiLoadButton;
+        private System.Windows.Forms.Button sellReportForIndividualProductUiLoadButton;
         private System.Windows.Forms.Button dailySellReportUiLoadButton;
         private System.Windows.Forms.Button purchaseNewButton;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button pdfCreateButton;
         private System.Windows.Forms.Button refreshButton;
+        private System.Windows.Forms.Button purchaseReportButton;
+        private System.Windows.Forms.Button button1;
     }
 }

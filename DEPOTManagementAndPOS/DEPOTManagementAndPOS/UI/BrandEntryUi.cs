@@ -29,33 +29,48 @@ namespace DEPOTManagementAndPOS.UI
         {
             BrandEntry aBrandEntry = new BrandEntry();
             CategoryEntry selectedCategory = (CategoryEntry) categoryComboBox.SelectedItem;
-            
-            aBrandEntry.Name = brandNameTextBox.Text;
-            aBrandEntry.CategoryEntry = selectedCategory;
-
             NewBrandEntryManager aNewBrandEntryManager = new NewBrandEntryManager();
-            bool saveNewBrandEntry = false;
 
-            if (!string.IsNullOrEmpty(aBrandEntry.Name))
+            string brandName = brandNameTextBox.Text;
+            aBrandEntry.Name = brandName;
+            aBrandEntry.CategoryEntry = selectedCategory;
+            
+
+            string brandNameFromDatabase = aNewBrandEntryManager.IsBrandNameAlreadyExists(brandName);
+
+
+            brandNameFromDatabase.ToUpper();
+            brandName.ToUpper();
+            if (brandNameFromDatabase != brandName)
             {
-                saveNewBrandEntry = aNewBrandEntryManager.SaveNewBrand(aBrandEntry);
+                bool saveNewBrandEntry = false;
 
-                if (selectedCategory != null)
+                if (!string.IsNullOrEmpty(aBrandEntry.Name))
                 {
-                    if (saveNewBrandEntry)
+                    saveNewBrandEntry = aNewBrandEntryManager.SaveNewBrand(aBrandEntry);
+
+                    if (selectedCategory != null)
                     {
-                        MessageBox.Show("New Brand saved successfully");
+                        if (saveNewBrandEntry)
+                        {
+                            MessageBox.Show("New Brand saved successfully");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error saving new brand");
+                        }
                     }
-                    else
-                    {
-                        MessageBox.Show("Error saving new brand");
-                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a brand name");
                 }    
             }
             else
             {
-                MessageBox.Show("Please enter a brand name");
+                MessageBox.Show("Brand name already exists");
             }
+            
             
             
             

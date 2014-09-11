@@ -17,5 +17,11 @@ namespace DEPOTManagementAndPOS.BLL
            _aProductEntryGetway = new ProductEntryGetway();
            return _aProductEntryGetway.SaveProductNameExtention(aProduct);
         }
+
+        public string DoesProductNameAlreadyExist(string productExtentionName)
+        {
+            _aProductEntryGetway = new ProductEntryGetway();
+            return _aProductEntryGetway.DoesProductNameAlreadyExist(productExtentionName);
+        }
     }
 }

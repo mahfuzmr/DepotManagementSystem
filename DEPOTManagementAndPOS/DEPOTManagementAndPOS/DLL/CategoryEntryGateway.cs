@@ -13,7 +13,7 @@ namespace DEPOTManagementAndPOS.DLL
     {
         private SqlConnection _connection;
         private SqlCommand _command;
-
+        private CategoryEntry _aCategoryEntry;
         public CategoryEntryGateway()
         {
             _connection = new SqlConnection();
@@ -54,6 +54,27 @@ namespace DEPOTManagementAndPOS.DLL
             }
             sqlConnection.Close();
             return _aCategoryEntryList;
+        }
+
+        public string HasThisCategoryAlreadyExist(string categoryName)
+        {
+            _aCategoryEntry = new CategoryEntry();
+            _connection.Open();
+            string query = string.Format("SELECT Name FROM CategoryEntryTable WHERE Name = ('{0}')", categoryName);
+
+            _command = new SqlCommand(query, _connection);
+            SqlDataReader aReader = _command.ExecuteReader();
+
+
+            if (aReader.HasRows)
+            {
+                while (aReader.Read())
+                {
+                    _aCategoryEntry.Name = (aReader[0]).ToString();
+                }
+            }
+            _connection.Close();
+            return _aCategoryEntry.Name;
         }
     }
 }

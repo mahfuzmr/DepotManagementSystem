@@ -30,5 +30,11 @@ namespace DEPOTManagementAndPOS.BLL
             return _aNewBrandEntryGateway.GetAllBrandUsingCategoryId(CategoryId);
 
         }
+
+        public string IsBrandNameAlreadyExists(string brandName)
+        {
+            _aNewBrandEntryGateway = new NewBrandEntryGateway();
+            return _aNewBrandEntryGateway.IsBrandNameAlreadyExists(brandName);
+        }
     }
 }

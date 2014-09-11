@@ -48,5 +48,11 @@ namespace DEPOTManagementAndPOS.BLL
             _aSellProductGateway = new SellProductGateway();
             return _aSellProductGateway.UpdateAllSellProductUsingOrderNo(aSellProduct, invoiceIdOfCurrentOrderNo);
         }
+
+        public List<SellProduct> GetSellReportForIndividualProduct()
+        {
+            _aSellProductGateway = new SellProductGateway();
+            return _aSellProductGateway.GetSellReportForIndividualProduct();
+        }
     }
 }

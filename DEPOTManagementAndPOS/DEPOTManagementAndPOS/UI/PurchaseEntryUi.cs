@@ -68,62 +68,80 @@ namespace DEPOTManagementAndPOS.UI
             _aStock = _aStockManager.GetCurrentStockInfo(productNameFromTextBox);
             string productNameFromDatabase = _aStock.ProductName;
 
-            // Update Stock
-            if (productNameFromTextBox == productNameFromDatabase)
+            if (!string.IsNullOrEmpty(quantityTextBox.Text) && !string.IsNullOrEmpty(productNameTextBox.Text))
             {
-
-                int quantityPrevious = _aStock.QuantityInStock;
-                int newQuantity = Convert.ToInt32(quantityTextBox.Text);
-                int totalQuantity = quantityPrevious + newQuantity;
-                
-                _aStock.QuantityInStock = totalQuantity;
-                _aStock.ProductName = productNameFromTextBox;
-
-
-                saveStockSuccess = _aStockManager.UpdateAllStockInfo(_aStock);
-                if (saveStockSuccess)
+                // Update Stock
+                if (productNameFromTextBox == productNameFromDatabase)
                 {
-                    MessageBox.Show("Stock info updated Successfully");
+
+                    int quantityPrevious = _aStock.QuantityInStock;
+                    int newQuantity = Convert.ToInt32(quantityTextBox.Text);
+                    int totalQuantity = quantityPrevious + newQuantity;
+
+                    _aStock.QuantityInStock = totalQuantity;
+                    _aStock.ProductName = productNameFromTextBox;
+
+
+                    saveStockSuccess = _aStockManager.UpdateAllStockInfo(_aStock);
+                    if (saveStockSuccess)
+                    {
+                        MessageBox.Show("Stock info updated Successfully");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error while updating stock info");
+                    }
+
                 }
-                else
+
+                else if (productNameFromTextBox != productNameFromDatabase)
                 {
-                    MessageBox.Show("Error while updating stock info");
+                    _aStock.QuantityInStock = Convert.ToInt32(quantityTextBox.Text);
+                    _aStock.ProductName = productNameFromTextBox;
+                    saveStockSuccess = _aStockManager.SaveNewStockInfo(_aStock);
+
+                    if (saveStockSuccess)
+                    {
+                        MessageBox.Show("New stock info saved successfully");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error saving new stock info");
+                    }
                 }
-
-            }
-
-            else if (productNameFromTextBox != productNameFromDatabase)
-            {
-                _aStock.QuantityInStock = Convert.ToInt32(quantityTextBox.Text);
-                _aStock.ProductName = productNameFromTextBox;
-                saveStockSuccess = _aStockManager.SaveNewStockInfo(_aStock);
-
-                if (saveStockSuccess)
-                {
-                    MessageBox.Show("New stock info saved successfully");
-                }
-                else
-                {
-                    MessageBox.Show("Error saving new stock info");
-                }
-            }
-
-            _aPurchase.Quantity = Convert.ToInt32(quantityTextBox.Text);
-            _aPurchase.ProductName = productNameFromTextBox;
-            _aPurchase.Price = Convert.ToDouble(unitPriceTextBox.Text);
-            totalPriceTextBox.Text = _aPurchase.GetTotalPurchasePrice().ToString();
-            _aPurchase.TotalPurchasePrice = Convert.ToDouble(totalPriceTextBox.Text);
-            _aPurchase.DateTime = dateTimePicker.Value.ToShortDateString();
-
-            savePurchaseSuccess = _aPurchaseManager.SaveAllPurchaseInfo(_aPurchase);
-            if (savePurchaseSuccess)
-            {
-                MessageBox.Show("Product Purchase info saved Successfully");
+    
             }
             else
             {
-                MessageBox.Show("Error saving Purchase info");
+                MessageBox.Show("Please enter all values");
             }
+            
+            
+
+            if (!string.IsNullOrEmpty(quantityTextBox.Text) && !string.IsNullOrEmpty(productNameTextBox.Text) && !string.IsNullOrEmpty(unitPriceTextBox.Text))
+            {
+                _aPurchase.Quantity = Convert.ToInt32(quantityTextBox.Text);
+                _aPurchase.ProductName = productNameFromTextBox;
+                _aPurchase.Price = Convert.ToDouble(unitPriceTextBox.Text);
+                totalPriceTextBox.Text = _aPurchase.GetTotalPurchasePrice().ToString();
+                _aPurchase.TotalPurchasePrice = Convert.ToDouble(totalPriceTextBox.Text);
+                _aPurchase.DateTime = dateTimePicker.Value.ToShortDateString();
+
+                savePurchaseSuccess = _aPurchaseManager.SaveAllPurchaseInfo(_aPurchase);
+                if (savePurchaseSuccess)
+                {
+                    MessageBox.Show("Product Purchase info saved Successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Error saving Purchase info");
+                }    
+            }
+            else
+            {
+                MessageBox.Show("Please enter all value");
+            }
+            
 
         }
 
@@ -154,9 +172,35 @@ namespace DEPOTManagementAndPOS.UI
 
         private void viewProductInfoButton_Click(object sender, EventArgs e)
         {
-            ViewProductInfoUI aViewProductInfoUi = new ViewProductInfoUI();
-            aViewProductInfoUi.ShowDialog();
+            DepotInfoUI aDepotInfoUi = new DepotInfoUI();
+            aDepotInfoUi.ShowDialog();
 
+        }
+
+        private void resetButton_Click(object sender, EventArgs e)
+        {
+            productNameTextBox.Clear();
+            quantityTextBox.Clear();
+            unitPriceTextBox.Clear();
+            totalPriceTextBox.Clear();
+        }
+
+        private void unitPriceTextBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            Purchase _aPurchase = new Purchase();
+
+            if (unitPriceTextBox.Text != "" && quantityTextBox.Text != "")
+            {
+                _aPurchase.Price = Convert.ToDouble(unitPriceTextBox.Text);
+                _aPurchase.Quantity = Convert.ToInt32(quantityTextBox.Text);
+                totalPriceTextBox.Text = _aPurchase.GetTotalPurchasePrice().ToString();
+
+            }
+            else
+            {
+                _aPurchase.Quantity = 0;
+                totalPriceTextBox.Clear();
+            }
         }
 
        
