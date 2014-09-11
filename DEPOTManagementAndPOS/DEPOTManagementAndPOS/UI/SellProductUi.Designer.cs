@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.customerInfoGroupBox = new System.Windows.Forms.GroupBox();
             this.addressOfShopRichTextBox = new System.Windows.Forms.RichTextBox();
@@ -82,6 +83,7 @@
             this.purchaseNewButton = new System.Windows.Forms.Button();
             this.purchaseReportButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.exitButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.customerInfoGroupBox.SuspendLayout();
@@ -103,6 +105,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.donePanel);
             this.panel1.Controls.Add(this.ProductInfoGroupBox);
@@ -113,6 +116,16 @@
             this.panel1.Size = new System.Drawing.Size(1170, 695);
             this.panel1.TabIndex = 0;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(14, 677);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(466, 15);
+            this.label11.TabIndex = 10;
+            this.label11.Text = "Developed And Powerd By TarfTech  Email:contact@tarftech.com Phone: 01738823238";
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -120,7 +133,7 @@
             this.panel2.Location = new System.Drawing.Point(631, 8);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(528, 366);
-            this.panel2.TabIndex = 10;
+            this.panel2.TabIndex = 0;
             // 
             // customerInfoGroupBox
             // 
@@ -138,7 +151,7 @@
             this.customerInfoGroupBox.Location = new System.Drawing.Point(9, 10);
             this.customerInfoGroupBox.Name = "customerInfoGroupBox";
             this.customerInfoGroupBox.Size = new System.Drawing.Size(510, 338);
-            this.customerInfoGroupBox.TabIndex = 5;
+            this.customerInfoGroupBox.TabIndex = 0;
             this.customerInfoGroupBox.TabStop = false;
             this.customerInfoGroupBox.Text = "Customer Info";
             // 
@@ -147,7 +160,7 @@
             this.addressOfShopRichTextBox.Location = new System.Drawing.Point(153, 248);
             this.addressOfShopRichTextBox.Name = "addressOfShopRichTextBox";
             this.addressOfShopRichTextBox.Size = new System.Drawing.Size(247, 74);
-            this.addressOfShopRichTextBox.TabIndex = 3;
+            this.addressOfShopRichTextBox.TabIndex = 4;
             this.addressOfShopRichTextBox.Text = "";
             // 
             // addressOfCustomeRichTextBox
@@ -155,7 +168,7 @@
             this.addressOfCustomeRichTextBox.Location = new System.Drawing.Point(156, 116);
             this.addressOfCustomeRichTextBox.Name = "addressOfCustomeRichTextBox";
             this.addressOfCustomeRichTextBox.Size = new System.Drawing.Size(247, 74);
-            this.addressOfCustomeRichTextBox.TabIndex = 3;
+            this.addressOfCustomeRichTextBox.TabIndex = 2;
             this.addressOfCustomeRichTextBox.Text = "";
             // 
             // label9
@@ -181,21 +194,21 @@
             this.shopNameTextBox.Location = new System.Drawing.Point(156, 201);
             this.shopNameTextBox.Name = "shopNameTextBox";
             this.shopNameTextBox.Size = new System.Drawing.Size(247, 23);
-            this.shopNameTextBox.TabIndex = 2;
+            this.shopNameTextBox.TabIndex = 3;
             // 
             // phoneTextBox
             // 
             this.phoneTextBox.Location = new System.Drawing.Point(156, 78);
             this.phoneTextBox.Name = "phoneTextBox";
             this.phoneTextBox.Size = new System.Drawing.Size(247, 23);
-            this.phoneTextBox.TabIndex = 2;
+            this.phoneTextBox.TabIndex = 1;
             // 
             // customerNameTextBox
             // 
             this.customerNameTextBox.Location = new System.Drawing.Point(156, 39);
             this.customerNameTextBox.Name = "customerNameTextBox";
             this.customerNameTextBox.Size = new System.Drawing.Size(247, 23);
-            this.customerNameTextBox.TabIndex = 2;
+            this.customerNameTextBox.TabIndex = 0;
             // 
             // label7
             // 
@@ -231,7 +244,7 @@
             this.donePanel.Location = new System.Drawing.Point(631, 380);
             this.donePanel.Name = "donePanel";
             this.donePanel.Size = new System.Drawing.Size(528, 294);
-            this.donePanel.TabIndex = 10;
+            this.donePanel.TabIndex = 0;
             // 
             // groupBox4
             // 
@@ -249,7 +262,7 @@
             this.groupBox4.Location = new System.Drawing.Point(9, 9);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(510, 271);
-            this.groupBox4.TabIndex = 11;
+            this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Transection";
             // 
@@ -258,7 +271,7 @@
             this.paidTextBox.Location = new System.Drawing.Point(175, 75);
             this.paidTextBox.Name = "paidTextBox";
             this.paidTextBox.Size = new System.Drawing.Size(145, 23);
-            this.paidTextBox.TabIndex = 2;
+            this.paidTextBox.TabIndex = 1;
             this.paidTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.paidTextBox_KeyUp);
             // 
             // cashCheckBox
@@ -267,7 +280,7 @@
             this.cashCheckBox.Location = new System.Drawing.Point(201, 22);
             this.cashCheckBox.Name = "cashCheckBox";
             this.cashCheckBox.Size = new System.Drawing.Size(59, 21);
-            this.cashCheckBox.TabIndex = 9;
+            this.cashCheckBox.TabIndex = 0;
             this.cashCheckBox.Text = "Cash";
             this.cashCheckBox.UseVisualStyleBackColor = true;
             this.cashCheckBox.CheckedChanged += new System.EventHandler(this.cashCheckBox_CheckedChanged);
@@ -278,7 +291,7 @@
             this.chequeCheckBox.Location = new System.Drawing.Point(275, 22);
             this.chequeCheckBox.Name = "chequeCheckBox";
             this.chequeCheckBox.Size = new System.Drawing.Size(76, 21);
-            this.chequeCheckBox.TabIndex = 9;
+            this.chequeCheckBox.TabIndex = 0;
             this.chequeCheckBox.Text = "Cheque";
             this.chequeCheckBox.UseVisualStyleBackColor = true;
             this.chequeCheckBox.CheckedChanged += new System.EventHandler(this.chequeCheckBox_CheckedChanged);
@@ -289,7 +302,7 @@
             this.totalItemTakenLabel.Location = new System.Drawing.Point(149, 111);
             this.totalItemTakenLabel.Name = "totalItemTakenLabel";
             this.totalItemTakenLabel.Size = new System.Drawing.Size(0, 17);
-            this.totalItemTakenLabel.TabIndex = 7;
+            this.totalItemTakenLabel.TabIndex = 0;
             // 
             // label12
             // 
@@ -306,7 +319,7 @@
             this.label10.Location = new System.Drawing.Point(21, 111);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(106, 17);
-            this.label10.TabIndex = 6;
+            this.label10.TabIndex = 0;
             this.label10.Text = "Total Item Take";
             // 
             // dueTextBox
@@ -315,7 +328,7 @@
             this.dueTextBox.Name = "dueTextBox";
             this.dueTextBox.ReadOnly = true;
             this.dueTextBox.Size = new System.Drawing.Size(145, 23);
-            this.dueTextBox.TabIndex = 2;
+            this.dueTextBox.TabIndex = 0;
             // 
             // label13
             // 
@@ -333,7 +346,7 @@
             this.grandTotalTextBox.Name = "grandTotalTextBox";
             this.grandTotalTextBox.ReadOnly = true;
             this.grandTotalTextBox.Size = new System.Drawing.Size(145, 23);
-            this.grandTotalTextBox.TabIndex = 2;
+            this.grandTotalTextBox.TabIndex = 0;
             // 
             // doneButton
             // 
@@ -341,7 +354,7 @@
             this.doneButton.Location = new System.Drawing.Point(328, 108);
             this.doneButton.Name = "doneButton";
             this.doneButton.Size = new System.Drawing.Size(144, 55);
-            this.doneButton.TabIndex = 3;
+            this.doneButton.TabIndex = 2;
             this.doneButton.Text = "Done!";
             this.doneButton.UseVisualStyleBackColor = false;
             this.doneButton.Click += new System.EventHandler(this.doneButton_Click);
@@ -521,7 +534,7 @@
             this.inStockTextBox.Name = "inStockTextBox";
             this.inStockTextBox.ReadOnly = true;
             this.inStockTextBox.Size = new System.Drawing.Size(135, 27);
-            this.inStockTextBox.TabIndex = 2;
+            this.inStockTextBox.TabIndex = 0;
             // 
             // groupBox3
             // 
@@ -530,7 +543,7 @@
             this.groupBox3.Location = new System.Drawing.Point(1176, 5);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(147, 97);
-            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabIndex = 0;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Selected Item Info";
             // 
@@ -557,7 +570,7 @@
             this.addNewItemButton.Location = new System.Drawing.Point(1176, 117);
             this.addNewItemButton.Name = "addNewItemButton";
             this.addNewItemButton.Size = new System.Drawing.Size(155, 50);
-            this.addNewItemButton.TabIndex = 6;
+            this.addNewItemButton.TabIndex = 1;
             this.addNewItemButton.Text = "Add New Items";
             this.addNewItemButton.UseVisualStyleBackColor = false;
             this.addNewItemButton.Click += new System.EventHandler(this.addNewItemButton_Click);
@@ -573,7 +586,7 @@
             this.stockInfoUiLoadButton.Location = new System.Drawing.Point(1176, 294);
             this.stockInfoUiLoadButton.Name = "stockInfoUiLoadButton";
             this.stockInfoUiLoadButton.Size = new System.Drawing.Size(155, 50);
-            this.stockInfoUiLoadButton.TabIndex = 6;
+            this.stockInfoUiLoadButton.TabIndex = 4;
             this.stockInfoUiLoadButton.Text = "Stock Report";
             this.stockInfoUiLoadButton.UseVisualStyleBackColor = false;
             this.stockInfoUiLoadButton.Click += new System.EventHandler(this.stockInfoUiLoadButton_Click);
@@ -589,7 +602,7 @@
             this.sellReportForIndividualProductUiLoadButton.Location = new System.Drawing.Point(1177, 412);
             this.sellReportForIndividualProductUiLoadButton.Name = "sellReportForIndividualProductUiLoadButton";
             this.sellReportForIndividualProductUiLoadButton.Size = new System.Drawing.Size(155, 50);
-            this.sellReportForIndividualProductUiLoadButton.TabIndex = 7;
+            this.sellReportForIndividualProductUiLoadButton.TabIndex = 6;
             this.sellReportForIndividualProductUiLoadButton.Text = "Sell Report";
             this.sellReportForIndividualProductUiLoadButton.UseVisualStyleBackColor = false;
             this.sellReportForIndividualProductUiLoadButton.Click += new System.EventHandler(this.sellReportForIndividualProductUiLoadButton_Click);
@@ -606,7 +619,7 @@
             this.dailySellReportUiLoadButton.Location = new System.Drawing.Point(1176, 354);
             this.dailySellReportUiLoadButton.Name = "dailySellReportUiLoadButton";
             this.dailySellReportUiLoadButton.Size = new System.Drawing.Size(155, 50);
-            this.dailySellReportUiLoadButton.TabIndex = 8;
+            this.dailySellReportUiLoadButton.TabIndex = 5;
             this.dailySellReportUiLoadButton.Text = "Daily Sell Report";
             this.dailySellReportUiLoadButton.UseVisualStyleBackColor = false;
             this.dailySellReportUiLoadButton.Click += new System.EventHandler(this.dailySellReportUiLoadButton_Click);
@@ -623,7 +636,7 @@
             this.purchaseNewButton.Location = new System.Drawing.Point(1176, 173);
             this.purchaseNewButton.Name = "purchaseNewButton";
             this.purchaseNewButton.Size = new System.Drawing.Size(155, 50);
-            this.purchaseNewButton.TabIndex = 9;
+            this.purchaseNewButton.TabIndex = 2;
             this.purchaseNewButton.Text = "New Purchase";
             this.purchaseNewButton.UseVisualStyleBackColor = false;
             this.purchaseNewButton.Click += new System.EventHandler(this.purchaseNewButton_Click);
@@ -640,7 +653,7 @@
             this.purchaseReportButton.Location = new System.Drawing.Point(1177, 470);
             this.purchaseReportButton.Name = "purchaseReportButton";
             this.purchaseReportButton.Size = new System.Drawing.Size(155, 50);
-            this.purchaseReportButton.TabIndex = 9;
+            this.purchaseReportButton.TabIndex = 7;
             this.purchaseReportButton.Text = "Purchase Report";
             this.purchaseReportButton.UseVisualStyleBackColor = false;
             this.purchaseReportButton.Click += new System.EventHandler(this.purchaseReportButton_Click);
@@ -656,10 +669,27 @@
             this.button1.Location = new System.Drawing.Point(1176, 229);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(155, 50);
-            this.button1.TabIndex = 7;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Sell Return";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.sellReturnUiLoadButton_Click);
+            // 
+            // exitButton
+            // 
+            this.exitButton.BackColor = System.Drawing.Color.Crimson;
+            this.exitButton.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.exitButton.FlatAppearance.BorderSize = 2;
+            this.exitButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RosyBrown;
+            this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitButton.Font = new System.Drawing.Font("Georgia", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.exitButton.Location = new System.Drawing.Point(1176, 648);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(155, 50);
+            this.exitButton.TabIndex = 8;
+            this.exitButton.Text = "Exit";
+            this.exitButton.UseVisualStyleBackColor = false;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // SellProductUi
             // 
@@ -668,6 +698,7 @@
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1344, 701);
             this.Controls.Add(this.purchaseReportButton);
+            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.purchaseNewButton);
             this.Controls.Add(this.dailySellReportUiLoadButton);
             this.Controls.Add(this.button1);
@@ -682,6 +713,7 @@
             this.Text = "Sell Product Entry";
             this.Load += new System.EventHandler(this.SellProductUi_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.customerInfoGroupBox.ResumeLayout(false);
             this.customerInfoGroupBox.PerformLayout();
@@ -754,5 +786,7 @@
         private System.Windows.Forms.Button refreshButton;
         private System.Windows.Forms.Button purchaseReportButton;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.Label label11;
     }
 }

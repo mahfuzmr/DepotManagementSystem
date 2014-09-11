@@ -21,6 +21,7 @@ namespace DEPOTManagementAndPOS.UI
             AddButtonColumnEdit();
             AddButtonColumnDelete();
             addToUpdateSellReturnButton.Enabled = false;
+            doneButton.Enabled = false;
         }
         double totalPrice = 0;
         private string OrderNo;
@@ -127,7 +128,8 @@ namespace DEPOTManagementAndPOS.UI
 
         private double dueAdjustedFromDeleteButton = 0;
         List<String> itemToBeDeleteList = new List<string>();
-        private List<Stock> _aStockList = new List<Stock>(); 
+        private List<Stock> _aStockList = new List<Stock>();
+        private int quantityOldForCheck = 0;
         private void sellReturnDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 4) //Assuming the button column as second column, if not can change the index
@@ -137,6 +139,7 @@ namespace DEPOTManagementAndPOS.UI
                 quantityReturnTextBox.Text = sellReturnDataGridView.CurrentRow.Cells[1].Value.ToString();
                 unitPriceSellReturnTextBox.Text = sellReturnDataGridView.CurrentRow.Cells[2].Value.ToString();
 
+                quantityOldForCheck = Convert.ToInt32(quantityReturnTextBox.Text);
                 double aProductTotalPrice = Convert.ToDouble(sellReturnDataGridView.CurrentRow.Cells[3].Value);
 
 
@@ -170,14 +173,6 @@ namespace DEPOTManagementAndPOS.UI
                 int quantityToBeDeletedItem = (int) sellReturnDataGridView.Rows[selectedRow].Cells[1].Value;
 
 
-                SellProductManeger aSellProductManager = new SellProductManeger();
-                SellInvoiceManager aSellInvoiceManager = new SellInvoiceManager();
-
-                
-
-
-
-
                 var confirmResult = MessageBox.Show("Are you sure to delete this item ??",
                         "Confirm Delete!!",
                         MessageBoxButtons.YesNo);
@@ -188,8 +183,6 @@ namespace DEPOTManagementAndPOS.UI
                 {
                     productsToBeDeleted.Add(aSellProductToDelete);
                     sellReturnDataGridView.Rows.Remove(sellReturnDataGridView.Rows[e.RowIndex]);
-
-                  //  double aProductTotalPrice = Convert.ToDouble(sellReturnDataGridView.CurrentRow.Cells[3].Value);
 
                     totaItemTakenCounter--;
                     totalPrice = _aSellProduct.GetGrandTotalMinus(totalPrice, aProductTotalPrice);
@@ -207,14 +200,7 @@ namespace DEPOTManagementAndPOS.UI
                     MessageBox.Show("Item not deleted");
                 }
                
-                //Adhustimg paid,due and total from sellInvoiceTable
-
-               // SellInvoiceManager _aSellInvoiceManager= new SellInvoiceManager();
-               // _aSellInvoiceManager.UpdateSellInvoiceAmpuntWhileDeleting();
-
-
-                 
-
+                
                 Stock _aStock = new Stock();
                 StockManager _aStockManager = new StockManager();
 
@@ -233,18 +219,7 @@ namespace DEPOTManagementAndPOS.UI
                     
                 }
                
-                //itemToBeDeleteList.Add(itemNameToBeDelete);
-                //double aProductTotalPrice = Convert.ToDouble(sellReturnDataGridView.CurrentRow.Cells[3].Value);
                 
-                //totalPrice = totalPrice - aProductTotalPrice;
-                //grandTotalTextBox.Text = totalPrice.ToString();
-                //totaItemTakenCounter--;
-                //totalItemTakenLabel.Text = totaItemTakenCounter.ToString();
-                //dueAdjustedTextBox.Text = (totalPrice - (Convert.ToDouble(paidTextBox.Text))).ToString();
-                //dueAdjustedFromDeleteButton = totalPrice - (Convert.ToDouble(paidTextBox.Text));
-                //payableTotalTextBox.Text=0.ToString();
-
-                //doneButton.Enabled = true;
 
             }
         }
@@ -255,7 +230,7 @@ namespace DEPOTManagementAndPOS.UI
         List<Stock> _aStockListFromGridViewAfterEditingProduct = new List<Stock>();
 
         private double paymentIsPlusOrMinus;
-        private double dueAdjustedFromAddButton ;
+        
 
         private void addToUpdateSellReturnButton_Click(object sender, EventArgs e)
         {
@@ -321,7 +296,7 @@ namespace DEPOTManagementAndPOS.UI
 
 
             dueAdjustedTextBox.Text = paymentIsPlusOrMinus.ToString();
-            dueAdjustedFromAddButton = paymentIsPlusOrMinus;
+            
 
             addToUpdateSellReturnButton.Enabled = false;
 
@@ -341,13 +316,19 @@ namespace DEPOTManagementAndPOS.UI
                 double totalPrice = aSellProduct.GetTotalPrice(aSellProduct.Quantity, aSellProduct.UnitPrice);
                 totalPriceSellReturnPerProductTextBox.Text = totalPrice.ToString();
 
-
+                if (quantityOldForCheck < aSellProduct.Quantity)
+                {
+                    MessageBox.Show("New quantity > sold quantity, please low your quantity");
+                    quantityReturnTextBox.Clear();
+                }
             }
             else
             {
                 aSellProduct.UnitPrice = 0;
                 totalPriceSellReturnPerProductTextBox.Clear();
             }
+
+            
         }
 
         private void unitPriceSellReturnTextBox_KeyUp(object sender, KeyEventArgs e)
@@ -549,20 +530,10 @@ namespace DEPOTManagementAndPOS.UI
                     MessageBox.Show("Error, Item can not be deleted from Sell Product table");
                 }
 
-
-
-
             }
 
-
-
         }
-
-            
-
-
-            
-          
+         
 
             ProductInfoClear();
             CustomerInfoClear();

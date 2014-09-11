@@ -98,29 +98,7 @@ namespace DEPOTManagementAndPOS.DLL
 
         public bool UpdateAllSellProductUsingOrderNo(SellProduct aSellProduct, long invoiceIdOfCurrentOrderNo)
         {
-            //_connection.Open();
-            //string queryMatchingSellInvoiceId =
-            //    string.Format(
-            //        "SELECT SellInvoiceId " +
-            //        "FROM SellInvoiceTable " +
-            //        "WHERE SellInvoiceTable.SellOrderNo ='{0}'", orderNo);
-            //_command = new SqlCommand(queryMatchingSellInvoiceId, _connection);
-            //SqlDataReader aReader = _command.ExecuteReader();
-
-            //if (aReader.HasRows)
-            //{
-            //    while (aReader.Read())
-            //    {
-            //        //int matchedSellInvoiceIdwithSellOrderNo;
-            //       matchedSellInvoiceIdwithSellOrderNo = Convert.ToInt32(aReader[0]);
-                    
-
-                    
-            //    }
-            //}
-            //_connection.Close();
-
-            // END of Parsing SellInvoiceID from SellInvoiceTable using SellOrderNo
+            
             _connection.Open();
 
             string query =

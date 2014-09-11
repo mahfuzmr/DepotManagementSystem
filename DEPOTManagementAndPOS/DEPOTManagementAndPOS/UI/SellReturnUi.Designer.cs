@@ -69,10 +69,11 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.grandTotalTextBox = new System.Windows.Forms.TextBox();
+            this.closeButton = new System.Windows.Forms.Button();
             this.doneButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.closeButton = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.ProductInfoGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sellReturnDataGridView)).BeginInit();
             this.panel2.SuspendLayout();
@@ -88,7 +89,7 @@
             this.label1.Location = new System.Drawing.Point(707, -17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 13);
-            this.label1.TabIndex = 7;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Order NO: 014578";
             // 
             // ProductInfoGroupBox
@@ -124,14 +125,14 @@
             this.paidTextBox.Name = "paidTextBox";
             this.paidTextBox.ReadOnly = true;
             this.paidTextBox.Size = new System.Drawing.Size(145, 23);
-            this.paidTextBox.TabIndex = 2;
+            this.paidTextBox.TabIndex = 0;
             // 
             // searchByOrderNoButton
             // 
             this.searchByOrderNoButton.Location = new System.Drawing.Point(386, 37);
             this.searchByOrderNoButton.Name = "searchByOrderNoButton";
             this.searchByOrderNoButton.Size = new System.Drawing.Size(95, 31);
-            this.searchByOrderNoButton.TabIndex = 10;
+            this.searchByOrderNoButton.TabIndex = 2;
             this.searchByOrderNoButton.Text = "Search";
             this.searchByOrderNoButton.UseVisualStyleBackColor = true;
             this.searchByOrderNoButton.Click += new System.EventHandler(this.searchByOrderNoButton_Click);
@@ -150,7 +151,7 @@
             this.sellReturnDataGridView.Name = "sellReturnDataGridView";
             this.sellReturnDataGridView.ReadOnly = true;
             this.sellReturnDataGridView.Size = new System.Drawing.Size(614, 322);
-            this.sellReturnDataGridView.TabIndex = 9;
+            this.sellReturnDataGridView.TabIndex = 4;
             this.sellReturnDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.sellReturnDataGridView_CellContentClick);
             // 
             // ItemName
@@ -184,7 +185,7 @@
             this.totalPriceSellReturnPerProductTextBox.Name = "totalPriceSellReturnPerProductTextBox";
             this.totalPriceSellReturnPerProductTextBox.ReadOnly = true;
             this.totalPriceSellReturnPerProductTextBox.Size = new System.Drawing.Size(178, 23);
-            this.totalPriceSellReturnPerProductTextBox.TabIndex = 6;
+            this.totalPriceSellReturnPerProductTextBox.TabIndex = 0;
             // 
             // dueTextBox
             // 
@@ -192,7 +193,7 @@
             this.dueTextBox.Name = "dueTextBox";
             this.dueTextBox.ReadOnly = true;
             this.dueTextBox.Size = new System.Drawing.Size(145, 23);
-            this.dueTextBox.TabIndex = 2;
+            this.dueTextBox.TabIndex = 0;
             // 
             // totalPricePerProductLabel
             // 
@@ -217,7 +218,7 @@
             this.searchOrderNoTextBox.Location = new System.Drawing.Point(139, 41);
             this.searchOrderNoTextBox.Name = "searchOrderNoTextBox";
             this.searchOrderNoTextBox.Size = new System.Drawing.Size(239, 23);
-            this.searchOrderNoTextBox.TabIndex = 0;
+            this.searchOrderNoTextBox.TabIndex = 1;
             // 
             // itemNameForSellReturnTextBox
             // 
@@ -225,7 +226,7 @@
             this.itemNameForSellReturnTextBox.Name = "itemNameForSellReturnTextBox";
             this.itemNameForSellReturnTextBox.ReadOnly = true;
             this.itemNameForSellReturnTextBox.Size = new System.Drawing.Size(419, 23);
-            this.itemNameForSellReturnTextBox.TabIndex = 4;
+            this.itemNameForSellReturnTextBox.TabIndex = 0;
             // 
             // label10
             // 
@@ -233,7 +234,7 @@
             this.label10.Location = new System.Drawing.Point(62, 41);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(75, 17);
-            this.label10.TabIndex = 1;
+            this.label10.TabIndex = 0;
             this.label10.Text = "Order No: ";
             // 
             // label14
@@ -261,7 +262,7 @@
             this.label2.Location = new System.Drawing.Point(52, 93);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 17);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 0;
             this.label2.Text = "Item name : ";
             // 
             // unitPriceSellReturnTextBox
@@ -269,7 +270,7 @@
             this.unitPriceSellReturnTextBox.Location = new System.Drawing.Point(139, 153);
             this.unitPriceSellReturnTextBox.Name = "unitPriceSellReturnTextBox";
             this.unitPriceSellReturnTextBox.Size = new System.Drawing.Size(111, 23);
-            this.unitPriceSellReturnTextBox.TabIndex = 2;
+            this.unitPriceSellReturnTextBox.TabIndex = 0;
             this.unitPriceSellReturnTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.unitPriceSellReturnTextBox_KeyUp);
             // 
             // quantityReturnTextBox
@@ -277,7 +278,7 @@
             this.quantityReturnTextBox.Location = new System.Drawing.Point(139, 123);
             this.quantityReturnTextBox.Name = "quantityReturnTextBox";
             this.quantityReturnTextBox.Size = new System.Drawing.Size(111, 23);
-            this.quantityReturnTextBox.TabIndex = 1;
+            this.quantityReturnTextBox.TabIndex = 0;
             this.quantityReturnTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.quantityReturnTextBox_KeyUp);
             // 
             // label3
@@ -305,7 +306,7 @@
             this.panel2.Location = new System.Drawing.Point(707, 42);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(618, 279);
-            this.panel2.TabIndex = 10;
+            this.panel2.TabIndex = 0;
             // 
             // customerInfoGroupBox
             // 
@@ -381,7 +382,7 @@
             this.donePanel.Location = new System.Drawing.Point(707, 327);
             this.donePanel.Name = "donePanel";
             this.donePanel.Size = new System.Drawing.Size(618, 378);
-            this.donePanel.TabIndex = 11;
+            this.donePanel.TabIndex = 1;
             // 
             // groupBox4
             // 
@@ -398,7 +399,7 @@
             this.groupBox4.Location = new System.Drawing.Point(15, 9);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(584, 353);
-            this.groupBox4.TabIndex = 11;
+            this.groupBox4.TabIndex = 0;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Done!";
             // 
@@ -450,7 +451,7 @@
             this.label12.Location = new System.Drawing.Point(71, 57);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(88, 17);
-            this.label12.TabIndex = 0;
+            this.label12.TabIndex = 4;
             this.label12.Text = "Total Price : ";
             // 
             // label7
@@ -469,43 +470,7 @@
             this.grandTotalTextBox.Name = "grandTotalTextBox";
             this.grandTotalTextBox.ReadOnly = true;
             this.grandTotalTextBox.Size = new System.Drawing.Size(145, 23);
-            this.grandTotalTextBox.TabIndex = 2;
-            // 
-            // doneButton
-            // 
-            this.doneButton.BackColor = System.Drawing.Color.SeaGreen;
-            this.doneButton.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
-            this.doneButton.FlatAppearance.BorderSize = 2;
-            this.doneButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RosyBrown;
-            this.doneButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.doneButton.Location = new System.Drawing.Point(331, 177);
-            this.doneButton.Name = "doneButton";
-            this.doneButton.Size = new System.Drawing.Size(194, 55);
-            this.doneButton.TabIndex = 3;
-            this.doneButton.Text = "Done!";
-            this.doneButton.UseVisualStyleBackColor = false;
-            this.doneButton.Click += new System.EventHandler(this.doneButton_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panel3.Location = new System.Drawing.Point(19, 42);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(679, 662);
-            this.panel3.TabIndex = 12;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.ProductInfoGroupBox);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.donePanel);
-            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(-5, -31);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1340, 720);
-            this.panel1.TabIndex = 8;
+            this.grandTotalTextBox.TabIndex = 5;
             // 
             // closeButton
             // 
@@ -517,10 +482,57 @@
             this.closeButton.Location = new System.Drawing.Point(131, 177);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(194, 55);
-            this.closeButton.TabIndex = 3;
+            this.closeButton.TabIndex = 1;
             this.closeButton.Text = "Close";
             this.closeButton.UseVisualStyleBackColor = false;
             this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            // 
+            // doneButton
+            // 
+            this.doneButton.BackColor = System.Drawing.Color.SeaGreen;
+            this.doneButton.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.doneButton.FlatAppearance.BorderSize = 2;
+            this.doneButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RosyBrown;
+            this.doneButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.doneButton.Location = new System.Drawing.Point(331, 177);
+            this.doneButton.Name = "doneButton";
+            this.doneButton.Size = new System.Drawing.Size(194, 55);
+            this.doneButton.TabIndex = 2;
+            this.doneButton.Text = "Done!";
+            this.doneButton.UseVisualStyleBackColor = false;
+            this.doneButton.Click += new System.EventHandler(this.doneButton_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel3.Location = new System.Drawing.Point(19, 42);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(679, 662);
+            this.panel3.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.ProductInfoGroupBox);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.donePanel);
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(-5, -31);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1340, 728);
+            this.panel1.TabIndex = 0;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(17, 708);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(466, 15);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Developed And Powerd By TarfTech  Email:contact@tarftech.com Phone: 01738823238";
             // 
             // SellReturnUi
             // 
@@ -543,6 +555,7 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -595,6 +608,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.Button closeButton;
+        private System.Windows.Forms.Label label9;
 
     }
 }

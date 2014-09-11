@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.refreshbutton = new System.Windows.Forms.Button();
             this.closeNewBrandButton = new System.Windows.Forms.Button();
             this.createNewCategoryButton = new System.Windows.Forms.Button();
             this.categoryComboBox = new System.Windows.Forms.ComboBox();
@@ -37,7 +38,6 @@
             this.brandNameTextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.refreshbutton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -50,7 +50,7 @@
             this.panel1.Location = new System.Drawing.Point(8, 9);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(596, 222);
-            this.panel1.TabIndex = 1;
+            this.panel1.TabIndex = 0;
             // 
             // groupBox1
             // 
@@ -70,12 +70,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add New Brand";
             // 
+            // refreshbutton
+            // 
+            this.refreshbutton.Location = new System.Drawing.Point(390, 90);
+            this.refreshbutton.Name = "refreshbutton";
+            this.refreshbutton.Size = new System.Drawing.Size(138, 32);
+            this.refreshbutton.TabIndex = 5;
+            this.refreshbutton.Text = "Refresh";
+            this.refreshbutton.UseVisualStyleBackColor = true;
+            this.refreshbutton.Click += new System.EventHandler(this.refreshbutton_Click);
+            // 
             // closeNewBrandButton
             // 
             this.closeNewBrandButton.Location = new System.Drawing.Point(156, 127);
             this.closeNewBrandButton.Name = "closeNewBrandButton";
             this.closeNewBrandButton.Size = new System.Drawing.Size(110, 35);
-            this.closeNewBrandButton.TabIndex = 5;
+            this.closeNewBrandButton.TabIndex = 6;
             this.closeNewBrandButton.Text = "Close";
             this.closeNewBrandButton.UseVisualStyleBackColor = true;
             this.closeNewBrandButton.Click += new System.EventHandler(this.closeNewBrandButton_Click);
@@ -96,14 +106,14 @@
             this.categoryComboBox.Location = new System.Drawing.Point(164, 43);
             this.categoryComboBox.Name = "categoryComboBox";
             this.categoryComboBox.Size = new System.Drawing.Size(219, 24);
-            this.categoryComboBox.TabIndex = 3;
+            this.categoryComboBox.TabIndex = 1;
             // 
             // saveNewBrandButton
             // 
             this.saveNewBrandButton.Location = new System.Drawing.Point(273, 127);
             this.saveNewBrandButton.Name = "saveNewBrandButton";
             this.saveNewBrandButton.Size = new System.Drawing.Size(110, 35);
-            this.saveNewBrandButton.TabIndex = 2;
+            this.saveNewBrandButton.TabIndex = 3;
             this.saveNewBrandButton.Text = "Save";
             this.saveNewBrandButton.UseVisualStyleBackColor = true;
             this.saveNewBrandButton.Click += new System.EventHandler(this.saveNewBrandButton_Click);
@@ -113,7 +123,7 @@
             this.brandNameTextBox.Location = new System.Drawing.Point(164, 90);
             this.brandNameTextBox.Name = "brandNameTextBox";
             this.brandNameTextBox.Size = new System.Drawing.Size(219, 23);
-            this.brandNameTextBox.TabIndex = 1;
+            this.brandNameTextBox.TabIndex = 2;
             // 
             // label2
             // 
@@ -132,16 +142,6 @@
             this.label1.Size = new System.Drawing.Size(130, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "New Brand Name : ";
-            // 
-            // refreshbutton
-            // 
-            this.refreshbutton.Location = new System.Drawing.Point(390, 90);
-            this.refreshbutton.Name = "refreshbutton";
-            this.refreshbutton.Size = new System.Drawing.Size(138, 32);
-            this.refreshbutton.TabIndex = 6;
-            this.refreshbutton.Text = "Refresh";
-            this.refreshbutton.UseVisualStyleBackColor = true;
-            this.refreshbutton.Click += new System.EventHandler(this.refreshbutton_Click);
             // 
             // BrandEntryUi
             // 

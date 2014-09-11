@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.refreshAllButton = new System.Windows.Forms.Button();
             this.closeProductEntryButton = new System.Windows.Forms.Button();
             this.productExtensionEntryTextBox = new System.Windows.Forms.TextBox();
             this.saveProductButton = new System.Windows.Forms.Button();
@@ -40,7 +41,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.refreshAllButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -75,12 +75,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add New Product";
             // 
+            // refreshAllButton
+            // 
+            this.refreshAllButton.Location = new System.Drawing.Point(428, 120);
+            this.refreshAllButton.Name = "refreshAllButton";
+            this.refreshAllButton.Size = new System.Drawing.Size(154, 35);
+            this.refreshAllButton.TabIndex = 7;
+            this.refreshAllButton.Text = "Refresh All";
+            this.refreshAllButton.UseVisualStyleBackColor = true;
+            this.refreshAllButton.Click += new System.EventHandler(this.refreshAllButton_Click);
+            // 
             // closeProductEntryButton
             // 
             this.closeProductEntryButton.Location = new System.Drawing.Point(201, 163);
             this.closeProductEntryButton.Name = "closeProductEntryButton";
             this.closeProductEntryButton.Size = new System.Drawing.Size(110, 35);
-            this.closeProductEntryButton.TabIndex = 16;
+            this.closeProductEntryButton.TabIndex = 8;
             this.closeProductEntryButton.Text = "Close";
             this.closeProductEntryButton.UseVisualStyleBackColor = true;
             this.closeProductEntryButton.Click += new System.EventHandler(this.closeProductEntryButton_Click);
@@ -90,14 +100,14 @@
             this.productExtensionEntryTextBox.Location = new System.Drawing.Point(181, 129);
             this.productExtensionEntryTextBox.Name = "productExtensionEntryTextBox";
             this.productExtensionEntryTextBox.Size = new System.Drawing.Size(240, 23);
-            this.productExtensionEntryTextBox.TabIndex = 0;
+            this.productExtensionEntryTextBox.TabIndex = 3;
             // 
             // saveProductButton
             // 
             this.saveProductButton.Location = new System.Drawing.Point(317, 163);
             this.saveProductButton.Name = "saveProductButton";
             this.saveProductButton.Size = new System.Drawing.Size(110, 35);
-            this.saveProductButton.TabIndex = 14;
+            this.saveProductButton.TabIndex = 4;
             this.saveProductButton.Text = "Save";
             this.saveProductButton.UseVisualStyleBackColor = true;
             this.saveProductButton.Click += new System.EventHandler(this.saveProductButton_Click);
@@ -107,7 +117,7 @@
             this.addNewBrandButton.Location = new System.Drawing.Point(427, 78);
             this.addNewBrandButton.Name = "addNewBrandButton";
             this.addNewBrandButton.Size = new System.Drawing.Size(154, 35);
-            this.addNewBrandButton.TabIndex = 14;
+            this.addNewBrandButton.TabIndex = 6;
             this.addNewBrandButton.Text = "Add New Brand";
             this.addNewBrandButton.UseVisualStyleBackColor = true;
             this.addNewBrandButton.Click += new System.EventHandler(this.addNewBrandButton_Click);
@@ -117,7 +127,7 @@
             this.addNewCategoryButton.Location = new System.Drawing.Point(426, 34);
             this.addNewCategoryButton.Name = "addNewCategoryButton";
             this.addNewCategoryButton.Size = new System.Drawing.Size(154, 35);
-            this.addNewCategoryButton.TabIndex = 15;
+            this.addNewCategoryButton.TabIndex = 5;
             this.addNewCategoryButton.Text = "Add New Category";
             this.addNewCategoryButton.UseVisualStyleBackColor = true;
             this.addNewCategoryButton.Click += new System.EventHandler(this.addNewCategoryButton_Click);
@@ -128,7 +138,7 @@
             this.brandComboBox.Location = new System.Drawing.Point(181, 83);
             this.brandComboBox.Name = "brandComboBox";
             this.brandComboBox.Size = new System.Drawing.Size(240, 24);
-            this.brandComboBox.TabIndex = 13;
+            this.brandComboBox.TabIndex = 2;
             // 
             // categoryComboBox
             // 
@@ -136,7 +146,7 @@
             this.categoryComboBox.Location = new System.Drawing.Point(181, 39);
             this.categoryComboBox.Name = "categoryComboBox";
             this.categoryComboBox.Size = new System.Drawing.Size(240, 24);
-            this.categoryComboBox.TabIndex = 12;
+            this.categoryComboBox.TabIndex = 1;
             this.categoryComboBox.SelectedIndexChanged += new System.EventHandler(this.categoryComboBox_SelectedIndexChanged);
             // 
             // label1
@@ -154,7 +164,7 @@
             this.label6.Location = new System.Drawing.Point(119, 86);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 17);
-            this.label6.TabIndex = 10;
+            this.label6.TabIndex = 1;
             this.label6.Text = "Brand : ";
             // 
             // label5
@@ -163,18 +173,8 @@
             this.label5.Location = new System.Drawing.Point(100, 42);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(77, 17);
-            this.label5.TabIndex = 11;
+            this.label5.TabIndex = 0;
             this.label5.Text = "Category : ";
-            // 
-            // refreshAllButton
-            // 
-            this.refreshAllButton.Location = new System.Drawing.Point(428, 120);
-            this.refreshAllButton.Name = "refreshAllButton";
-            this.refreshAllButton.Size = new System.Drawing.Size(154, 35);
-            this.refreshAllButton.TabIndex = 17;
-            this.refreshAllButton.Text = "Refresh All";
-            this.refreshAllButton.UseVisualStyleBackColor = true;
-            this.refreshAllButton.Click += new System.EventHandler(this.refreshAllButton_Click);
             // 
             // ProductEntryUi
             // 

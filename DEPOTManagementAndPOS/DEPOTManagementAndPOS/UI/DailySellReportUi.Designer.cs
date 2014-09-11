@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dailySellReportPanel = new System.Windows.Forms.Panel();
             this.dailySellReportGroupBox = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.showPDFReportButton = new System.Windows.Forms.Button();
             this.showDailyReportButton = new System.Windows.Forms.Button();
             this.dailySellReportDataGridView = new System.Windows.Forms.DataGridView();
@@ -52,16 +53,16 @@
             // 
             this.sellReportDateTimePicker.Location = new System.Drawing.Point(413, 22);
             this.sellReportDateTimePicker.Name = "sellReportDateTimePicker";
-            this.sellReportDateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.sellReportDateTimePicker.TabIndex = 0;
+            this.sellReportDateTimePicker.Size = new System.Drawing.Size(200, 26);
+            this.sellReportDateTimePicker.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(348, 23);
+            this.label1.Location = new System.Drawing.Point(319, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 13);
-            this.label1.TabIndex = 1;
+            this.label1.Size = new System.Drawing.Size(93, 20);
+            this.label1.TabIndex = 0;
             this.label1.Text = "Select Date";
             // 
             // dailySellReportPanel
@@ -71,15 +72,17 @@
             this.dailySellReportPanel.Location = new System.Drawing.Point(7, 2);
             this.dailySellReportPanel.Name = "dailySellReportPanel";
             this.dailySellReportPanel.Size = new System.Drawing.Size(1320, 698);
-            this.dailySellReportPanel.TabIndex = 2;
+            this.dailySellReportPanel.TabIndex = 0;
             // 
             // dailySellReportGroupBox
             // 
+            this.dailySellReportGroupBox.Controls.Add(this.label11);
             this.dailySellReportGroupBox.Controls.Add(this.showPDFReportButton);
             this.dailySellReportGroupBox.Controls.Add(this.showDailyReportButton);
             this.dailySellReportGroupBox.Controls.Add(this.dailySellReportDataGridView);
             this.dailySellReportGroupBox.Controls.Add(this.sellReportDateTimePicker);
             this.dailySellReportGroupBox.Controls.Add(this.label1);
+            this.dailySellReportGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dailySellReportGroupBox.Location = new System.Drawing.Point(13, 11);
             this.dailySellReportGroupBox.Name = "dailySellReportGroupBox";
             this.dailySellReportGroupBox.Size = new System.Drawing.Size(1297, 676);
@@ -87,24 +90,34 @@
             this.dailySellReportGroupBox.TabStop = false;
             this.dailySellReportGroupBox.Text = "Daily Sell Report ";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(10, 657);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(466, 15);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "Developed And Powerd By TarfTech  Email:contact@tarftech.com Phone: 01738823238";
+            // 
             // showPDFReportButton
             // 
-            this.showPDFReportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showPDFReportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.showPDFReportButton.Location = new System.Drawing.Point(747, 16);
             this.showPDFReportButton.Name = "showPDFReportButton";
             this.showPDFReportButton.Size = new System.Drawing.Size(120, 35);
-            this.showPDFReportButton.TabIndex = 4;
+            this.showPDFReportButton.TabIndex = 3;
             this.showPDFReportButton.Text = "Show PDF Report";
             this.showPDFReportButton.UseVisualStyleBackColor = true;
             this.showPDFReportButton.Click += new System.EventHandler(this.showPDFReportButton_Click);
             // 
             // showDailyReportButton
             // 
-            this.showDailyReportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.showDailyReportButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.showDailyReportButton.Location = new System.Drawing.Point(620, 16);
             this.showDailyReportButton.Name = "showDailyReportButton";
             this.showDailyReportButton.Size = new System.Drawing.Size(120, 35);
-            this.showDailyReportButton.TabIndex = 3;
+            this.showDailyReportButton.TabIndex = 2;
             this.showDailyReportButton.Text = "Show Report";
             this.showDailyReportButton.UseVisualStyleBackColor = true;
             this.showDailyReportButton.Click += new System.EventHandler(this.showDailyReportButton_Click);
@@ -126,7 +139,7 @@
             this.dailySellReportDataGridView.Location = new System.Drawing.Point(6, 64);
             this.dailySellReportDataGridView.Name = "dailySellReportDataGridView";
             this.dailySellReportDataGridView.ReadOnly = true;
-            this.dailySellReportDataGridView.Size = new System.Drawing.Size(1285, 606);
+            this.dailySellReportDataGridView.Size = new System.Drawing.Size(1285, 590);
             this.dailySellReportDataGridView.TabIndex = 2;
             // 
             // OrderNo
@@ -212,5 +225,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Due;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalSoldItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn PaymentMethod;
+        private System.Windows.Forms.Label label11;
     }
 }

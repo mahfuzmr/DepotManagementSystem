@@ -80,7 +80,7 @@
             this.closePurchaseEntryUiButton.Location = new System.Drawing.Point(139, 266);
             this.closePurchaseEntryUiButton.Name = "closePurchaseEntryUiButton";
             this.closePurchaseEntryUiButton.Size = new System.Drawing.Size(120, 35);
-            this.closePurchaseEntryUiButton.TabIndex = 22;
+            this.closePurchaseEntryUiButton.TabIndex = 8;
             this.closePurchaseEntryUiButton.Text = "Close";
             this.closePurchaseEntryUiButton.UseVisualStyleBackColor = true;
             this.closePurchaseEntryUiButton.Click += new System.EventHandler(this.closePurchaseEntryUiButton_Click);
@@ -92,7 +92,7 @@
             this.viewProductInfoButton.Margin = new System.Windows.Forms.Padding(4);
             this.viewProductInfoButton.Name = "viewProductInfoButton";
             this.viewProductInfoButton.Size = new System.Drawing.Size(150, 35);
-            this.viewProductInfoButton.TabIndex = 21;
+            this.viewProductInfoButton.TabIndex = 10;
             this.viewProductInfoButton.Text = "View Depot";
             this.viewProductInfoButton.UseVisualStyleBackColor = true;
             this.viewProductInfoButton.Click += new System.EventHandler(this.viewProductInfoButton_Click);
@@ -103,7 +103,7 @@
             this.addNewItemButton.Margin = new System.Windows.Forms.Padding(4);
             this.addNewItemButton.Name = "addNewItemButton";
             this.addNewItemButton.Size = new System.Drawing.Size(150, 35);
-            this.addNewItemButton.TabIndex = 20;
+            this.addNewItemButton.TabIndex = 9;
             this.addNewItemButton.Text = "Add New Item";
             this.addNewItemButton.UseVisualStyleBackColor = true;
             this.addNewItemButton.Click += new System.EventHandler(this.addNewItemButton_Click);
@@ -115,7 +115,7 @@
             this.resetButton.Margin = new System.Windows.Forms.Padding(4);
             this.resetButton.Name = "resetButton";
             this.resetButton.Size = new System.Drawing.Size(120, 35);
-            this.resetButton.TabIndex = 19;
+            this.resetButton.TabIndex = 7;
             this.resetButton.Text = "Reset";
             this.resetButton.UseVisualStyleBackColor = true;
             this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
@@ -127,7 +127,7 @@
             this.savePurchaseButton.Margin = new System.Windows.Forms.Padding(4);
             this.savePurchaseButton.Name = "savePurchaseButton";
             this.savePurchaseButton.Size = new System.Drawing.Size(120, 35);
-            this.savePurchaseButton.TabIndex = 18;
+            this.savePurchaseButton.TabIndex = 6;
             this.savePurchaseButton.Text = "Save";
             this.savePurchaseButton.UseVisualStyleBackColor = true;
             this.savePurchaseButton.Click += new System.EventHandler(this.savePurchaseButton_Click);
@@ -138,7 +138,7 @@
             this.quantityTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.quantityTextBox.Name = "quantityTextBox";
             this.quantityTextBox.Size = new System.Drawing.Size(135, 23);
-            this.quantityTextBox.TabIndex = 16;
+            this.quantityTextBox.TabIndex = 3;
             this.quantityTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.quantityTextBox_KeyUp);
             // 
             // totalPriceTextBox
@@ -148,7 +148,7 @@
             this.totalPriceTextBox.Name = "totalPriceTextBox";
             this.totalPriceTextBox.ReadOnly = true;
             this.totalPriceTextBox.Size = new System.Drawing.Size(237, 23);
-            this.totalPriceTextBox.TabIndex = 14;
+            this.totalPriceTextBox.TabIndex = 5;
             // 
             // unitPriceTextBox
             // 
@@ -156,7 +156,7 @@
             this.unitPriceTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.unitPriceTextBox.Name = "unitPriceTextBox";
             this.unitPriceTextBox.Size = new System.Drawing.Size(135, 23);
-            this.unitPriceTextBox.TabIndex = 15;
+            this.unitPriceTextBox.TabIndex = 2;
             this.unitPriceTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.unitPriceTextBox_KeyUp);
             // 
             // productNameTextBox
@@ -165,7 +165,7 @@
             this.productNameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.productNameTextBox.Name = "productNameTextBox";
             this.productNameTextBox.Size = new System.Drawing.Size(455, 23);
-            this.productNameTextBox.TabIndex = 13;
+            this.productNameTextBox.TabIndex = 1;
             // 
             // dateTimePicker
             // 
@@ -173,7 +173,7 @@
             this.dateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(237, 23);
-            this.dateTimePicker.TabIndex = 17;
+            this.dateTimePicker.TabIndex = 4;
             // 
             // label4
             // 
@@ -231,7 +231,7 @@
             this.panel1.Location = new System.Drawing.Point(13, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(824, 354);
-            this.panel1.TabIndex = 6;
+            this.panel1.TabIndex = 0;
             // 
             // PurchaseEntryUi
             // 
