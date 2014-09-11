@@ -232,5 +232,38 @@ namespace DEPOTManagementAndPOS.DLL
             return sellInvoiceId;
 
         }
+
+        public List<SellProduct> GetSellReportForIndividualProduct()
+        {
+            _connection.Open();
+
+            List<SellProduct> aSellProductList = new List<SellProduct>();
+            string query = string.Format("SELECT ItemName, Quantity, UnitPrice, TotalPrice FROM SellProductTable ORDER BY ItemName ASC");
+            _command = new SqlCommand(query, _connection);
+            SqlDataReader aReader = _command.ExecuteReader();
+
+            if (aReader.HasRows)
+            {
+
+                while (aReader.Read())
+                {
+                    _aSellProduct = new SellProduct();
+
+
+
+                    _aSellProduct.ItemName = aReader[0].ToString();
+                    _aSellProduct.Quantity = Convert.ToInt32(aReader[1]);
+                    _aSellProduct.UnitPrice = Convert.ToDouble(aReader[2]);
+                    _aSellProduct.TotalPrice = Convert.ToDouble(aReader[3]);
+
+
+                    aSellProductList.Add(_aSellProduct);
+
+
+                }
+            }
+            _connection.Close();
+            return aSellProductList;
+        }
     }
 }

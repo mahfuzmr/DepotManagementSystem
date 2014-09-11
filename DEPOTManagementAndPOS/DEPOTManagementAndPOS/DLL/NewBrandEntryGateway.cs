@@ -13,6 +13,7 @@ namespace DEPOTManagementAndPOS.DLL
     {
         private SqlConnection _connection;
         private SqlCommand _command;
+        private BrandEntry _aBrandEntry;
 
         public NewBrandEntryGateway()
         {
@@ -73,6 +74,39 @@ namespace DEPOTManagementAndPOS.DLL
             sqlConnection.Close();
             return _aneNewBrandEntryList;
             
+        }
+
+        public string IsBrandNameAlreadyExists(string brandName)
+        {
+            //_connection.Open();
+            //string query = string.Format("SELECT Name FROM BrandEntryTable WHERE Name = '{0}'", brandName);
+
+            //_command = new SqlCommand(query, _connection);
+            //int affectedRows = _command.ExecuteNonQuery();
+            //_connection.Close();
+            //if (affectedRows > 0)
+            //{
+            //    return true;
+            //}
+
+            //return false;
+            _aBrandEntry = new BrandEntry();
+            _connection.Open();
+            string query = string.Format("SELECT Name FROM BrandEntryTable WHERE Name = '{0}'", brandName);
+
+            _command = new SqlCommand(query, _connection);
+            SqlDataReader aReader = _command.ExecuteReader();
+
+
+            if (aReader.HasRows)
+            {
+                while (aReader.Read())
+                {
+                    _aBrandEntry.Name = (aReader[0]).ToString();
+                }
+            }
+            _connection.Close();
+            return _aBrandEntry.Name;
         }
     }
 }

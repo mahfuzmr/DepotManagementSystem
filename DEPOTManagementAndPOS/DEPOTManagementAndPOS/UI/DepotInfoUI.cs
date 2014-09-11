@@ -88,36 +88,15 @@ namespace DEPOTManagementAndPOS.UI
 
                 }
 
-                //var confirmResult = MessageBox.Show("Are you sure to delete this item ??",
-                //        "Confirm Delete!!",
-                //        MessageBoxButtons.YesNo);
-
-
-
-                //if (confirmResult == DialogResult.Yes)
-                //{
-                //    productsToBeDeleted.Add(aSellProductToDelete);
-                //    sellReturnDataGridView.Rows.Remove(sellReturnDataGridView.Rows[e.RowIndex]);
-
-                //    //  double aProductTotalPrice = Convert.ToDouble(sellReturnDataGridView.CurrentRow.Cells[3].Value);
-
-                //    totaItemTakenCounter--;
-                //    totalPrice = _aSellProduct.GetGrandTotalMinus(totalPrice, aProductTotalPrice);
-                //    grandTotalTextBox.Text = totalPrice.ToString();
-                //    dueAdjustedTextBox.Text = (totalPrice - (Convert.ToDouble(paidTextBox.Text))).ToString();
-                //    totalItemTakenLabel.Text = totaItemTakenCounter.ToString();
-
-                //    addToUpdateSellReturnButton.Enabled = true;
-                //    doneButton.Enabled = true;
-
-
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Item not deleted");
-                //}
+              
 
             }
+        }
+
+        private void doneButton_Click(object sender, EventArgs e)
+        {
+
+            this.Close();
         }
 
        

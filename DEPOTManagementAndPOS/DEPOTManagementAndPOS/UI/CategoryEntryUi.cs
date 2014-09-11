@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Design;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DEPOTManagementAndPOS.BLL;
 using DEPOTManagementAndPOS.Model;
+using iTextSharp.text.pdf.codec;
 
 namespace DEPOTManagementAndPOS.UI
 {
@@ -22,28 +24,42 @@ namespace DEPOTManagementAndPOS.UI
         private void saveCatagoryButton_Click(object sender, EventArgs e)
         {
             CategoryEntry _aCategoryEntry = new CategoryEntry();
-            _aCategoryEntry.Name = categoryEntryTextBox.Text;
 
+            string categoryName = categoryEntryTextBox.Text;
+            _aCategoryEntry.Name = categoryName;
             CategoryEntryManager _aCategoryEntryManager = new CategoryEntryManager();
 
-            bool saveCategory = false;
+            
+            string categoryNameFromDatabase = _aCategoryEntryManager.HasThisCategoryAlreadyExist(categoryName);
 
-            if (!string.IsNullOrEmpty(_aCategoryEntry.Name))
+            categoryNameFromDatabase.ToUpper();
+            categoryName.ToUpper();
+            if (categoryNameFromDatabase != categoryName)
             {
-                saveCategory = _aCategoryEntryManager.SaveCategory(_aCategoryEntry);
-                if (saveCategory)
+                bool saveCategory = false;
+
+                if (!string.IsNullOrEmpty(_aCategoryEntry.Name))
                 {
-                    MessageBox.Show("Category saved succesfully");
+                    saveCategory = _aCategoryEntryManager.SaveCategory(_aCategoryEntry);
+                    if (saveCategory)
+                    {
+                        MessageBox.Show("Category saved succesfully");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error saving new category");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Error saving new category");
+                    MessageBox.Show("Please enter a name for the Category");
                 }    
             }
             else
             {
-                MessageBox.Show("Please enter a name for the Category");
+                MessageBox.Show("Category Name already exists");
             }
+            
             
 
 

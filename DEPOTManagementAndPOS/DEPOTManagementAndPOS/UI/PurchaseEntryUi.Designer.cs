@@ -118,6 +118,7 @@
             this.resetButton.TabIndex = 19;
             this.resetButton.Text = "Reset";
             this.resetButton.UseVisualStyleBackColor = true;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
             // 
             // savePurchaseButton
             // 
@@ -156,6 +157,7 @@
             this.unitPriceTextBox.Name = "unitPriceTextBox";
             this.unitPriceTextBox.Size = new System.Drawing.Size(135, 23);
             this.unitPriceTextBox.TabIndex = 15;
+            this.unitPriceTextBox.KeyUp += new System.Windows.Forms.KeyEventHandler(this.unitPriceTextBox_KeyUp);
             // 
             // productNameTextBox
             // 

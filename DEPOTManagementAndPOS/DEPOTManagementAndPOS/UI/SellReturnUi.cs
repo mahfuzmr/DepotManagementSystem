@@ -137,11 +137,6 @@ namespace DEPOTManagementAndPOS.UI
                 quantityReturnTextBox.Text = sellReturnDataGridView.CurrentRow.Cells[1].Value.ToString();
                 unitPriceSellReturnTextBox.Text = sellReturnDataGridView.CurrentRow.Cells[2].Value.ToString();
 
-                
-
-
-
-
                 double aProductTotalPrice = Convert.ToDouble(sellReturnDataGridView.CurrentRow.Cells[3].Value);
 
 
@@ -282,6 +277,7 @@ namespace DEPOTManagementAndPOS.UI
                 quantity = 0;
                 unitPrice = 0;
             }
+            
 
             double totalPricePerProduct = _aSellProduct.GetTotalPrice(quantity, unitPrice);
 
@@ -562,58 +558,6 @@ namespace DEPOTManagementAndPOS.UI
 
         }
 
-        //for (int i = 0; i < sellReturnDataGridView.Rows.Count - 1; i++)
-            //{
-
-            //    bool status2 = false;
-            //    for (int j = 0; j < 1; j++)
-            //    {
-            //        SellProduct aSellProduct = new SellProduct();
-
-            //        aSellProduct.Quantity = Convert.ToInt32(sellReturnDataGridView.Rows[i].Cells[j + 1].Value);
-            //        aSellProduct.UnitPrice = Convert.ToDouble(sellReturnDataGridView.Rows[i].Cells[j + 2].Value);
-            //        aSellProduct.TotalPrice = Convert.ToDouble(sellReturnDataGridView.Rows[i].Cells[j + 3].Value);
-            //        aSellProduct.ItemName = (string) sellReturnDataGridView.Rows[i].Cells[j].Value;
-
-
-                    
-
-            //        string productNameFromGridView = aSellProduct.ItemName;
-
-
-
-
-            //        StockManager _aStockManager = new StockManager();
-                    
-            //        //----Updating stockTable after pressing AddToUpdateSellReturnButton using Edit button-------
-
-                    
-            //        //Stock _aStock = new Stock();
-
-            //        //_aStock = _aStockManager.GetCurrentStockInfo(productNameFromGridView);
-            //        //string productNameFromDatabase = _aStock.ProductName;
-
-
-
-
-            //        // Updating StockTable from delete button
-            //        foreach (Stock stock in _aStockList)
-            //        {
-                        
-            //            bool updateStockSuccess = false;
-            //            updateStockSuccess = _aStockManager.UpdateAllStockInfoUsingList(stock);
-            //            if (updateStockSuccess)
-            //            {
-            //                MessageBox.Show("Successfully updated stock Stock info inf stock table");
-            //            }
-            //            else
-            //            {
-            //                MessageBox.Show("Error updating stock info");
-            //            }
-            //        }
-
-
-            //    }
             
 
 
@@ -648,6 +592,11 @@ namespace DEPOTManagementAndPOS.UI
             paidTextBox.Clear();
             dueTextBox.Clear();
             sellReturnDataGridView.Rows.Clear();
+        }
+
+        private void closeButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         

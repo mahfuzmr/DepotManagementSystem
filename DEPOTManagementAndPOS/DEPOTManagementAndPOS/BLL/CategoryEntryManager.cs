@@ -23,5 +23,11 @@ namespace DEPOTManagementAndPOS.BLL
             _aCategoryEntryGateway = new CategoryEntryGateway();
             return _aCategoryEntryGateway.GetAllCategory();
         }
+
+        public string HasThisCategoryAlreadyExist(string categoryName)
+        {
+            _aCategoryEntryGateway = new CategoryEntryGateway();
+            return _aCategoryEntryGateway.HasThisCategoryAlreadyExist(categoryName);
+        }
     }
 }

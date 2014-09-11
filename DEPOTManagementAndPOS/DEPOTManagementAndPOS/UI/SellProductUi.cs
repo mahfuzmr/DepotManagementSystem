@@ -113,141 +113,157 @@ namespace DEPOTManagementAndPOS.UI
         
         private void doneButton_Click(object sender, EventArgs e)
         {
-
-            Customer _aCustomer = new Customer();
-            _aCustomer.Name = customerNameTextBox.Text;
-            _aCustomer.Phone = phoneTextBox.Text;
-            _aCustomer.AddressOfCustomer = addressOfCustomeRichTextBox.Text;
-            _aCustomer.ShopName = shopNameTextBox.Text;
-            _aCustomer.AddressOfShop = addressOfShopRichTextBox.Text;
-
-            bool saveCustomerSuccess = false;
-            CustomerManager _aCustomerManager = new CustomerManager();
-
-            saveCustomerSuccess = _aCustomerManager.SaveAllCustomerInfo(_aCustomer);
-            if (saveCustomerSuccess)
-            {
-                MessageBox.Show("Customer info saved successfully");
-
-            }
-            else
-            {
-                MessageBox.Show("Error saving Customer info");
-            }
-
             SellInvoice _aSellInvoice = new SellInvoice();
             SellInvoiceManager _aInvoiceManager = new SellInvoiceManager();
 
-            string today = DateTime.Today.ToShortDateString();
-            _aSellInvoice.GrandTotal = Convert.ToDouble(grandTotalTextBox.Text);
-            if (!string.IsNullOrEmpty(paidTextBox.Text))
+            if (!string.IsNullOrEmpty(customerNameTextBox.Text) && !string.IsNullOrEmpty(phoneTextBox.Text) && !string.IsNullOrEmpty(addressOfCustomeRichTextBox.Text) && !string.IsNullOrEmpty(shopNameTextBox.Text) && !string.IsNullOrEmpty(addressOfShopRichTextBox.Text))
             {
-                _aSellInvoice.Paid = Convert.ToDouble(paidTextBox.Text);    
-            }
-            else
-            {
-                MessageBox.Show("Please enter paid amount");
-            }
-            _aSellInvoice.Due = Convert.ToDouble(dueTextBox.Text);
-            _aSellInvoice.OrderNo = _aInvoiceManager.GetInvoiceOrderNo();
-            
-            _aSellInvoice.SellDate = today;
-            _aSellInvoice.TotalItemSold = Convert.ToInt32(totalItemTakenLabel.Text);
-            _aSellInvoice.Customer.CustomerId = CustomerManager.GetCustomerId();
-            String statusOfCashIn = null;
-            if (cashCheckBox.Checked)
-            {
-                statusOfCashIn = "Cash";
-                //chequeCheckBox.Enabled = false;
-            }
-            else if (chequeCheckBox.Checked)
-            {
-                //cashCheckBox.Enabled = false;
-                statusOfCashIn = "Bank Cheque";
-            }
-            else if (!cashCheckBox.Checked && !chequeCheckBox.Checked)
-            {
-                MessageBox.Show("Please specify payment method whether it's cash or cheque");
-            }
-            _aSellInvoice.CashStatus = statusOfCashIn;
+                Customer _aCustomer = new Customer();
+                _aCustomer.Name = customerNameTextBox.Text;
+                _aCustomer.Phone = phoneTextBox.Text;
+                _aCustomer.AddressOfCustomer = addressOfCustomeRichTextBox.Text;
+                _aCustomer.ShopName = shopNameTextBox.Text;
+                _aCustomer.AddressOfShop = addressOfShopRichTextBox.Text;
 
-            bool saveSellInvoiceSuccess = false;
+                bool saveCustomerSuccess = false;
+                CustomerManager _aCustomerManager = new CustomerManager();
 
-            saveSellInvoiceSuccess = _aInvoiceManager.SaveSellInvoiceInfo(_aSellInvoice);
-            if (saveSellInvoiceSuccess)
-            {
-                MessageBox.Show("Item Sold Successfully");
-            }
-            else
-            {
-                MessageBox.Show("Error, Saving Sell Invoice Info");
-            }
-
-          List<SellProduct> _aSellProductList = new List<SellProduct>();
-          List<Stock> _aStockList = new List<Stock>();  
-            StockManager _aStockManager = new StockManager();
-            
-            
-            for (int i = 0; i < selectedItemDataGridView.Rows.Count-1; i++)
-            {
-                for (int j = 0; j < 1; j++)
+                saveCustomerSuccess = _aCustomerManager.SaveAllCustomerInfo(_aCustomer);
+                if (saveCustomerSuccess)
                 {
-                    SellProduct aSellProduct = new SellProduct();
-                    Stock _aStock = new Stock();
-                    
-                    string productName = Convert.ToString(selectedItemDataGridView.Rows[i].Cells[j].Value);
-                    Int32 quantity = Convert.ToInt32(selectedItemDataGridView.Rows[i].Cells[j + 1].Value);
-                    aSellProduct.UnitPrice = Convert.ToDouble(selectedItemDataGridView.Rows[i].Cells[j + 2].Value);
-                    aSellProduct.TotalPrice = Convert.ToDouble(selectedItemDataGridView.Rows[i].Cells[j + 3].Value);
-                    aSellProduct.SellInvoice.SellInvoiceId = _aInvoiceManager.GetSellInvoiceId();
-                    aSellProduct.ItemName = productName;
-                    aSellProduct.Quantity = quantity;
+                    MessageBox.Show("Customer info saved successfully");
 
-                    
-                    _aStock = _aStockManager.GetCurrentStockInfo(productName);
-                    string productNameFromDatabase = _aStock.ProductName;
-                    
-                    if (productNameFromDatabase == productName)
+                }
+                else
+                {
+                    MessageBox.Show("Error saving Customer info");
+                }
+
+
+                if (!string.IsNullOrEmpty(grandTotalTextBox.Text) && !string.IsNullOrEmpty(paidTextBox.Text))
+                {
+
+
+                    string today = DateTime.Today.ToShortDateString();
+                    _aSellInvoice.GrandTotal = Convert.ToDouble(grandTotalTextBox.Text);
+                    if (!string.IsNullOrEmpty(paidTextBox.Text))
                     {
-                        int quantityPrevious = _aStock.QuantityInStock;
-                        int quantityNew = quantity;
-                        int quantityInStockAfterSell = quantityPrevious - quantityNew;
-
-                        _aStock.QuantityInStock = quantityInStockAfterSell;
-                        _aStock.ProductName = productName;
-
-                        bool updateStockSuccess = false;
-                        updateStockSuccess = _aStockManager.UpdateAllStockInfo(_aStock);
-                        if (updateStockSuccess)
-                        {
-                            MessageBox.Show("update stock Stock info");
-                            _aStockList.Add(_aStock);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Error updating stock info");
-                        }
+                        _aSellInvoice.Paid = Convert.ToDouble(paidTextBox.Text);
                     }
-                    
-                    
-                    _aSellProductList.Add(aSellProduct);
+                    else
+                    {
+                        MessageBox.Show("Please enter paid amount");
+                    }
+                    _aSellInvoice.Due = Convert.ToDouble(dueTextBox.Text);
+                    _aSellInvoice.OrderNo = _aInvoiceManager.GetInvoiceOrderNo();
+
+                    _aSellInvoice.SellDate = today;
+                    _aSellInvoice.TotalItemSold = Convert.ToInt32(totalItemTakenLabel.Text);
+                    _aSellInvoice.Customer.CustomerId = CustomerManager.GetCustomerId();
+                    String statusOfCashIn = null;
+                    if (cashCheckBox.Checked)
+                    {
+                        statusOfCashIn = "Cash";
+                        //chequeCheckBox.Enabled = false;
+                    }
+                    else if (chequeCheckBox.Checked)
+                    {
+                        //cashCheckBox.Enabled = false;
+                        statusOfCashIn = "Bank Cheque";
+                    }
+                    else if (!cashCheckBox.Checked && !chequeCheckBox.Checked)
+                    {
+                        MessageBox.Show("Please specify payment method whether it's cash or cheque");
+                    }
+                    _aSellInvoice.CashStatus = statusOfCashIn;
+
+                    bool saveSellInvoiceSuccess = false;
+
+                    saveSellInvoiceSuccess = _aInvoiceManager.SaveSellInvoiceInfo(_aSellInvoice);
+                    if (saveSellInvoiceSuccess)
+                    {
+                        MessageBox.Show("Item Sold Successfully");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error, Saving Sell Invoice Info");
+                    }
+                }
+
+
+                List<SellProduct> _aSellProductList = new List<SellProduct>();
+                List<Stock> _aStockList = new List<Stock>();
+                StockManager _aStockManager = new StockManager();
+
+
+                for (int i = 0; i < selectedItemDataGridView.Rows.Count - 1; i++)
+                {
+                    for (int j = 0; j < 1; j++)
+                    {
+                        SellProduct aSellProduct = new SellProduct();
+                        Stock _aStock = new Stock();
+
+                        string productName = Convert.ToString(selectedItemDataGridView.Rows[i].Cells[j].Value);
+                        Int32 quantity = Convert.ToInt32(selectedItemDataGridView.Rows[i].Cells[j + 1].Value);
+                        aSellProduct.UnitPrice = Convert.ToDouble(selectedItemDataGridView.Rows[i].Cells[j + 2].Value);
+                        aSellProduct.TotalPrice = Convert.ToDouble(selectedItemDataGridView.Rows[i].Cells[j + 3].Value);
+                        aSellProduct.SellInvoice.SellInvoiceId = _aInvoiceManager.GetSellInvoiceId();
+                        aSellProduct.ItemName = productName;
+                        aSellProduct.Quantity = quantity;
+
+
+                        _aStock = _aStockManager.GetCurrentStockInfo(productName);
+                        string productNameFromDatabase = _aStock.ProductName;
+
+                        if (productNameFromDatabase == productName)
+                        {
+                            int quantityPrevious = _aStock.QuantityInStock;
+                            int quantityNew = quantity;
+                            int quantityInStockAfterSell = quantityPrevious - quantityNew;
+
+                            _aStock.QuantityInStock = quantityInStockAfterSell;
+                            _aStock.ProductName = productName;
+
+                            bool updateStockSuccess = false;
+                            updateStockSuccess = _aStockManager.UpdateAllStockInfo(_aStock);
+                            if (updateStockSuccess)
+                            {
+                                MessageBox.Show("update stock Stock info");
+                                _aStockList.Add(_aStock);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error updating stock info");
+                            }
+                        }
+
+
+                        _aSellProductList.Add(aSellProduct);
+                    }
+                }
+
+
+
+                bool saveSellProductStatus = false;
+
+                SellProductManeger aProductManeger = new SellProductManeger();
+                saveSellProductStatus = aProductManeger.saveAllSellProductInfo(_aSellProductList);
+                if (saveSellProductStatus)
+                {
+                    MessageBox.Show("Sell product info saved successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Error saving sell info product");
                 }
             }
-
-            
-
-            bool saveSellProductStatus = false;
-
-            SellProductManeger aProductManeger=new SellProductManeger();
-            saveSellProductStatus = aProductManeger.saveAllSellProductInfo(_aSellProductList);
-            if (saveSellProductStatus)
-            {
-                MessageBox.Show("Sell product info saved successfully");
-            }
             else
             {
-                MessageBox.Show("Error saving sell info product");
+                MessageBox.Show("Please enter customer info and other info accurately");
             }
+            
+
+
 
             
             customerNameTextBox.Clear();
@@ -499,10 +515,32 @@ namespace DEPOTManagementAndPOS.UI
             {
                 addItemsButton.Enabled = false;
                 MessageBox.Show("Low stock than quantity");
+                quantityTextBox.Clear();
             }
             else if (quantityForSell <= quantityStock)
             {
                 addItemsButton.Enabled = true;
+            }
+
+            SellProduct aSellProduct = new SellProduct();
+
+            if (unitPriceTextBox.Text != "" && quantityTextBox.Text != "")
+            {
+
+                aSellProduct.Quantity = Convert.ToInt32(quantityTextBox.Text);
+                aSellProduct.UnitPrice = Convert.ToDouble(unitPriceTextBox.Text);
+
+                double totalPrice = aSellProduct.GetTotalPrice(aSellProduct.Quantity, aSellProduct.UnitPrice);
+                totalPricePerProductTextBox.Text = totalPrice.ToString();
+
+
+
+            }
+            else
+            {
+                aSellProduct.UnitPrice = 0;
+                totalPricePerProductTextBox.Clear();
+
             }
         }
 
@@ -547,6 +585,20 @@ namespace DEPOTManagementAndPOS.UI
             var autoComplete = new AutoCompleteStringCollection();
             autoComplete.AddRange(productNameFromJoinedDatabase);
             itemNameForSellTextBox.AutoCompleteCustomSource = autoComplete;
+        }
+
+        private void purchaseReportButton_Click(object sender, EventArgs e)
+        {
+            PurchaseInfoUi aPurchaseInfoUi=new PurchaseInfoUi();
+            aPurchaseInfoUi.ShowDialog();
+
+
+        }
+
+        private void sellReportForIndividualProductUiLoadButton_Click(object sender, EventArgs e)
+        {
+            SellProductReportForIndividualProductUi aSellProductReportForIndividualProductUi = new SellProductReportForIndividualProductUi();
+            aSellProductReportForIndividualProductUi.ShowDialog();
         }
         
       

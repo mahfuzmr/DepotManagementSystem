@@ -72,6 +72,7 @@
             this.doneButton = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.closeButton = new System.Windows.Forms.Button();
             this.ProductInfoGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sellReturnDataGridView)).BeginInit();
             this.panel2.SuspendLayout();
@@ -392,6 +393,7 @@
             this.groupBox4.Controls.Add(this.label12);
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.grandTotalTextBox);
+            this.groupBox4.Controls.Add(this.closeButton);
             this.groupBox4.Controls.Add(this.doneButton);
             this.groupBox4.Location = new System.Drawing.Point(15, 9);
             this.groupBox4.Name = "groupBox4";
@@ -472,9 +474,13 @@
             // doneButton
             // 
             this.doneButton.BackColor = System.Drawing.Color.SeaGreen;
-            this.doneButton.Location = new System.Drawing.Point(77, 177);
+            this.doneButton.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.doneButton.FlatAppearance.BorderSize = 2;
+            this.doneButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RosyBrown;
+            this.doneButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.doneButton.Location = new System.Drawing.Point(331, 177);
             this.doneButton.Name = "doneButton";
-            this.doneButton.Size = new System.Drawing.Size(448, 55);
+            this.doneButton.Size = new System.Drawing.Size(194, 55);
             this.doneButton.TabIndex = 3;
             this.doneButton.Text = "Done!";
             this.doneButton.UseVisualStyleBackColor = false;
@@ -500,6 +506,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1340, 720);
             this.panel1.TabIndex = 8;
+            // 
+            // closeButton
+            // 
+            this.closeButton.BackColor = System.Drawing.Color.SeaGreen;
+            this.closeButton.FlatAppearance.BorderColor = System.Drawing.Color.Gainsboro;
+            this.closeButton.FlatAppearance.BorderSize = 2;
+            this.closeButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RosyBrown;
+            this.closeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.closeButton.Location = new System.Drawing.Point(131, 177);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(194, 55);
+            this.closeButton.TabIndex = 3;
+            this.closeButton.Text = "Close";
+            this.closeButton.UseVisualStyleBackColor = false;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // SellReturnUi
             // 
@@ -573,6 +594,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.Button closeButton;
 
     }
 }

@@ -14,6 +14,7 @@ namespace DEPOTManagementAndPOS.DLL
         private SqlConnection _connection;
         private SqlCommand _command;
 
+        private Product _aProduct;
         public ProductEntryGetway()
         {
             _connection = new SqlConnection();
@@ -38,6 +39,28 @@ namespace DEPOTManagementAndPOS.DLL
             }
             return false;
                         
+        }
+
+        public string DoesProductNameAlreadyExist(string productExtentionName)
+        {
+            _aProduct = new Product();
+            _connection.Open();
+            string query = string.Format("SELECT ProductNameExtention FROM ProductNameExtentionEntryTable WHERE ProductNameExtention='{0}'", productExtentionName);
+
+            _command = new SqlCommand(query, _connection);
+            SqlDataReader aReader = _command.ExecuteReader();
+            
+            
+            if (aReader.HasRows)
+            {
+                while (aReader.Read())
+                {
+                    _aProduct.ProductNameExtention = (aReader[0]).ToString();
+                }
+            }
+            _connection.Close();
+            return _aProduct.ProductNameExtention;
+
         }
     }
 }

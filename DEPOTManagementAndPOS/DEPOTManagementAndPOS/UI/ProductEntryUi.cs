@@ -22,6 +22,9 @@ namespace DEPOTManagementAndPOS.UI
 
             brandComboBox.ValueMember = "BrandEnteyId";
             brandComboBox.DisplayMember = "Name";
+
+            CategoryEntryManager _aCategoryEntryManager = new CategoryEntryManager();
+            categoryComboBox.DataSource = _aCategoryEntryManager.GetAllCategory();
             
             
         }
@@ -35,26 +38,45 @@ namespace DEPOTManagementAndPOS.UI
             CategoryEntry selectedCategory = (CategoryEntry) categoryComboBox.SelectedItem;
             BrandEntry selectedBrand = (BrandEntry) brandComboBox.SelectedItem;
 
-            _aProduct.ProductNameExtention = productExtensionEntryTextBox.Text;
+            string productExtentionName = productExtensionEntryTextBox.Text;
+            //_aProduct.ProductNameExtention = productExtentionName;
+
             _aProduct.CategoryEntry = selectedCategory;
             _aProduct.BrandEntry = selectedBrand;
+            
 
-            if (!string.IsNullOrEmpty(_aProduct.ProductNameExtention))
+             string nameFromDatabase = _aProductEntryManager.DoesProductNameAlreadyExist(productExtentionName);
+
+             _aProduct.ProductNameExtention = productExtentionName;
+
+
+            nameFromDatabase.ToUpper();
+            productExtentionName.ToUpper();
+
+            if (nameFromDatabase != productExtentionName)
             {
-                saveNewProduct = _aProductEntryManager.SaveProductNameExtention(_aProduct);
-                if (saveNewProduct)
+                if (!string.IsNullOrEmpty(_aProduct.ProductNameExtention))
                 {
-                    MessageBox.Show("Product name extention saved successful");
+                    saveNewProduct = _aProductEntryManager.SaveProductNameExtention(_aProduct);
+                    if (saveNewProduct)
+                    {
+                        MessageBox.Show("Product name extention saved successful");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error saving product name extention");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Error saving product name extention");
+                    MessageBox.Show("Please enter a product specication/extention");
                 }    
             }
             else
             {
-                MessageBox.Show("Please enter a product specication/extention");
+                MessageBox.Show("Product name extention / specification already exists");
             }
+            
             
 
         }
